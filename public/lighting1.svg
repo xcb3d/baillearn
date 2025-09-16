@@ -1,0 +1,21 @@
+<svg viewBox="0 0 239 304" id="svg12307707451" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <defs>
+      <path d="M 177.642 20.46 C 178.165 18.501 175.777 17.097 174.32 18.506 L 19.558 168.062 C 18.265 169.311 19.149 171.5 20.948 171.5 L 85.838 171.5 C 87.885 171.5 89.331 173.506 88.684 175.449 L 53.11 282.171 C 52.446 284.161 54.903 285.7 56.404 284.235 L 215.23 129.146 C 217.154 127.267 215.824 124 213.134 124 L 152.604 124 C 151.29 124 150.333 122.754 150.672 121.484 Z" id="a1020z"/>
+      <filter id="a1022z" filterUnits="objectBoundingBox" x="-21.3%" y="-15.7%" width="142.6%" height="131.5%">
+        <feOffset dx="0" dy="0" in="SourceAlpha" result="a1025z"/>
+        <feGaussianBlur stdDeviation="10" in="a1025z" result="a1026z"/>
+        <feFlood flood-color="rgb(255, 248, 176)" result="a1027z"/>
+        <feComposite in="a1027z" in2="a1026z" operator="in" result="a1023z"/>
+      </filter>
+    </defs>
+    <mask id="a1024z" x="-21.3%" y="-15.7%" width="142.6%" height="131.5%">
+      <rect x="-21.3%" y="-15.7%" width="142.6%" height="131.5%" fill="white"/>
+      <use href="#a1020z" fill="black"/>
+    </mask>
+    <g filter="url(#a1022z)" mask="url(#a1024z)">
+      <use fill="black" stroke="black" stroke-opacity="0" stroke-width="0" href="#a1020z"/>
+    </g>
+    <use href="#a1020z" fill="rgb(255, 255, 255)"/>
+  </g>
+</svg>
