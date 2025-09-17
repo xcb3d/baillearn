@@ -25,14 +25,14 @@ export default function HeroSection() {
       
       {/* Images - Student Photos */}
       <motion.div 
-        className="will-change-transform flex-none w-[150px] md:w-[225px] lg:w-[300px] h-[290px] md:h-[435px] lg:h-[580px] absolute bottom-0 left-[-5px] md:left-[-5px] lg:left-[-5px] overflow-hidden" 
+        className="will-change-transform flex-none w-[150px] md:w-[180px] lg:w-[300px] h-[290px] md:h-[348px] lg:h-[580px] absolute bottom-[-50px] md:bottom-0 left-[-5px] md:left-[-5px] lg:left-[-5px] overflow-hidden" 
         data-framer-name="Bảo"
         initial={{ opacity: 0, x: -100 }}
         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
         <motion.div 
-          className="aspect-[0.707847] h-[195px] md:h-[292px] lg:h-[389px] flex-none w-[137px] md:w-[206px] lg:w-[275px] absolute top-2 md:top-3 lg:top-5 right-[-7px] md:right-[-10px] lg:right-[-14px] overflow-visible rotate-[9deg]" 
+          className="aspect-[0.707847] h-[195px] md:h-[234px] lg:h-[389px] flex-none w-[137px] md:w-[165px] lg:w-[275px] absolute top-2 md:top-3 lg:top-5 right-[-7px] md:right-[-10px] lg:right-[-14px] overflow-visible rotate-[9deg]" 
           data-framer-name="Ảnh 3 (1) 1"
           initial={{ opacity: 0, scale: 0.8, rotate: 0 }}
           animate={isInView ? { opacity: 1, scale: 1, rotate: 9 } : { opacity: 0, scale: 0.8, rotate: 0 }}
@@ -49,7 +49,7 @@ export default function HeroSection() {
           />
         </motion.div>
         <motion.div 
-          className="aspect-square h-[201px] md:h-[301px] lg:h-[402px] flex-none absolute bottom-[-71px] md:bottom-[-107px] lg:bottom-[-143px] left-[-49px] md:left-[-74px] lg:left-[-99px] right-[-1px] md:right-[-2px] lg:right-[-3px] overflow-visible -rotate-[25deg]" 
+          className="aspect-square h-[201px] md:h-[241px] lg:h-[402px] flex-none absolute bottom-[-71px] md:bottom-[-86px] lg:bottom-[-143px] left-[-49px] md:left-[-59px] lg:left-[-99px] right-[-1px] md:right-[-2px] lg:right-[-3px] overflow-visible -rotate-[25deg]" 
           data-framer-name="Frame 339"
           initial={{ opacity: 0, scale: 0.8, rotate: 0 }}
           animate={isInView ? { opacity: 1, scale: 1, rotate: -25 } : { opacity: 0, scale: 0.8, rotate: 0 }}
@@ -68,14 +68,14 @@ export default function HeroSection() {
       </motion.div>
 
       <motion.div 
-        className="will-change-transform flex-none w-[155px] md:w-[233px] lg:w-[311px] h-[289px] md:h-[433px] lg:h-[578px] absolute bottom-[-16px] md:bottom-[-24px] lg:bottom-[-33px] right-[-9px] md:right-[-14px] lg:right-[-19px] overflow-hidden" 
+        className="will-change-transform flex-none w-[155px] md:w-[186px] lg:w-[311px] h-[289px] md:h-[346px] lg:h-[578px] absolute bottom-[-66px] md:bottom-[-24px] lg:bottom-[-33px] right-[-9px] md:right-[-14px] lg:right-[-19px] overflow-hidden" 
         data-framer-name="Hải"
         initial={{ opacity: 0, x: 100 }}
         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
         transition={{ duration: 0.8, delay: 0.3 }}
       >
         <motion.div 
-          className="flex-none w-[141px] md:w-[212px] lg:w-[283px] h-[200px] md:h-[300px] lg:h-[400px] absolute top-1 md:top-1 lg:top-2 left-[calc(50.8039%_-_70.5px)] md:left-[calc(50.8039%_-_106px)] lg:left-[calc(50.8039%_-_141.5px)] overflow-visible -rotate-[3deg]" 
+          className="flex-none w-[141px] md:w-[170px] lg:w-[283px] h-[200px] md:h-[240px] lg:h-[400px] absolute top-1 md:top-1 lg:top-2 left-[calc(50.8039%_-_70.5px)] md:left-[calc(50.8039%_-_85px)] lg:left-[calc(50.8039%_-_141.5px)] overflow-visible -rotate-[3deg]" 
           data-framer-name="Hưng 1"
           initial={{ opacity: 0, scale: 0.8, rotate: 0 }}
           animate={isInView ? { opacity: 1, scale: 1, rotate: -3 } : { opacity: 0, scale: 0.8, rotate: 0 }}
@@ -92,7 +92,7 @@ export default function HeroSection() {
           />
         </motion.div>
         <motion.div 
-          className="z-10 flex-none gap-2.5 w-[128px] md:w-[192px] lg:w-[256px] h-[111px] md:h-[167px] lg:h-[223px] absolute bottom-5 md:bottom-7 lg:bottom-10 left-[calc(45.3376%_-_64px)] md:left-[calc(45.3376%_-_96px)] lg:left-[calc(45.3376%_-_128px)] overflow-visible -rotate-[75deg]" 
+          className="z-10 flex-none gap-2.5 w-[128px] md:w-[154px] lg:w-[256px] h-[111px] md:h-[134px] lg:h-[223px] absolute bottom-5 md:bottom-7 lg:bottom-10 left-[calc(45.3376%_-_64px)] md:left-[calc(45.3376%_-_77px)] lg:left-[calc(45.3376%_-_128px)] overflow-visible -rotate-[75deg]" 
           data-framer-name="Frame 341"
           initial={{ opacity: 0, scale: 0.8, rotate: 0 }}
           animate={isInView ? { opacity: 1, scale: 1, rotate: -75 } : { opacity: 0, scale: 0.8, rotate: 0 }}
@@ -111,7 +111,7 @@ export default function HeroSection() {
       </motion.div>
 
       <motion.div 
-        className="aspect-square h-[57px] md:h-[86px] lg:h-[115px] flex-none w-[57px] md:w-[86px] lg:w-[115px] absolute top-[-1px] md:top-[-2px] lg:top-[-3px] left-[6px] md:left-[9px] lg:left-[13px] overflow-visible rotate-[15deg]" 
+        className="hidden md:block aspect-square h-[57px] md:h-[86px] lg:h-[115px] flex-none w-[57px] md:w-[86px] lg:w-[115px] absolute top-[-1px] md:top-[-2px] lg:top-[-3px] left-[6px] md:left-[9px] lg:left-[13px] overflow-visible rotate-[15deg]" 
         data-framer-name="Frame 340"
         initial={{ opacity: 0, scale: 0, rotate: 0 }}
         animate={isInView ? { opacity: 1, scale: 1, rotate: 15 } : { opacity: 0, scale: 0, rotate: 0 }}
@@ -136,7 +136,7 @@ export default function HeroSection() {
              data-framer-name="Header Content">
           <header className="flex flex-col justify-center items-center gap-3 md:gap-4 lg:gap-6 w-full h-min p-0 relative overflow-visible" 
                   data-framer-name="Header">
-            <div className="flex flex-col justify-start flex-shrink-0" 
+            <div className="flex flex-col justify-start flex-shrink-0 gap-2 md:gap-0" 
                  data-framer-component-type="RichTextContainer">
               <motion.div 
                 className="inline-block bg-primary px-3 py-1 md:px-6 md:py-3 lg:px-8 lg:py-4 mb-1 md:mb-3 lg:mb-4 rounded-full"
