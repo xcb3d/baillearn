@@ -279,52 +279,56 @@ const BentoSection = () => {
               </div>
             </div>
           </div>
-          {/* Visual (Chart) - Width bằng card, height 85% ở cuối */}
-          <div className="absolute bottom-[-20px] left-0 right-0 h-[85%] overflow-hidden">
+          {/* Visual (Chart) - Bottom half on mobile/tablet, full on desktop */}
+          <div className="absolute overflow-visible
+                          bottom-0 left-0 right-0 h-[55%]
+                          sm:bottom-0 sm:h-[55%] sm:overflow-visible
+                          lg:inset-0 lg:h-full lg:left-0 lg:overflow-hidden">
             <motion.img 
               src="/chart.svg" 
               alt="Learning progress chart"
-              className="w-full h-full object-cover opacity-95"
-              style={{ filter: 'brightness(1.5)' }}
+              className="absolute opacity-95
+                         w-full h-auto min-h-full
+                         -translate-x-[120px] translate-y-[45px] scale-[1.8]
+                         sm:-translate-x-[45px] sm:translate-y-[12px] sm:scale-[1.2]
+                         lg:translate-x-0 lg:translate-y-0 lg:scale-100 lg:h-full lg:min-h-0
+                         object-cover object-top
+                         lg:object-center"
+              style={{ 
+                filter: 'brightness(1.5)'
+              }}
               loading="lazy"
               initial={{ opacity: 0, scale: 1.1 }}
               animate={isInView ? { opacity: 0.95, scale: 1 } : { opacity: 0, scale: 1.1 }}
               transition={{ duration: 0.8, delay: 0.7 }}
             />
             
-            {/* Chart Cursor - Nằm trên SVG với width thoải mái */}
-            <div className="absolute w-[150px] h-[255px] flex flex-col justify-center items-center gap-[10px] overflow-visible z-10
-                            md:w-[120px] md:h-[190px] md:gap-[8px]
-                            sm:w-[100px] sm:h-[150px] sm:gap-[6px]"
+            {/* Chart Cursor - Nằm trên SVG với width thoải mái - Desktop only */}
+            <div className="hidden lg:flex absolute w-[150px] h-[255px] flex-col justify-center items-center gap-[10px] overflow-visible z-10"
                  style={{
                    top: 'calc(78.2051% - 199.5px)',
                    left: 'calc(85.4167% - 75px)'
                  }}>
                {/* Marker Container */}
-               <div className="absolute top-[1px] w-[104px] h-[104px] flex flex-col justify-center items-center gap-[13px] overflow-hidden
-                               md:w-[85px] md:h-[85px] md:gap-[10px]
-                               sm:w-[65px] sm:h-[65px] sm:gap-[8px]"
+               <div className="absolute top-[1px] w-[104px] h-[104px] flex flex-col justify-center items-center gap-[13px] overflow-hidden"
                     style={{ left: 'calc(48.4375% - 52px)' }}>
                 
                 {/* Marker 1 - Largest circle */}
-                <div className="absolute bottom-0 left-0 right-0 aspect-square h-[104px] bg-primary opacity-35 flex-none overflow-hidden
-                                md:h-[85px] sm:h-[65px]"
+                <div className="absolute bottom-0 left-0 right-0 aspect-square h-[104px] bg-primary opacity-35 flex-none overflow-hidden"
                      style={{
                        WebkitMask: 'radial-gradient(50% 50%, #000 99.99%, #0000 100%)',
                        mask: 'radial-gradient(50% 50%, #000 99.99%, #0000 100%)'
                      }}></div>
                 
                 {/* Marker 2 - Medium circle */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 aspect-square w-[65px] h-[65px] bg-primary opacity-40 flex-none overflow-hidden
-                                md:w-[52px] md:h-[52px] sm:w-[39px] sm:h-[39px]"
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 aspect-square w-[65px] h-[65px] bg-primary opacity-40 flex-none overflow-hidden"
                      style={{
                        WebkitMask: 'radial-gradient(50% 50%, #000 99.99%, #0000 100%)',
                        mask: 'radial-gradient(50% 50%, #000 99.99%, #0000 100%)'
                      }}></div>
                 
                 {/* Marker 3 - Small white circle */}
-                <div className="relative aspect-square w-[26px] h-[26px] bg-white flex-none overflow-hidden
-                                md:w-[21px] md:h-[21px] sm:w-[16px] sm:h-[16px]"
+                <div className="relative aspect-square w-[26px] h-[26px] bg-white flex-none overflow-hidden"
                      style={{
                        WebkitMask: 'radial-gradient(50% 50%, #000 99.99%, #0000 100%)',
                        mask: 'radial-gradient(50% 50%, #000 99.99%, #0000 100%)'
@@ -567,9 +571,9 @@ const BentoSection = () => {
       
       {/* Top Right Corner - bentocard-float2 */}
       <motion.div
-        className="aspect-square h-[280px] z-5 flex-none w-[280px] absolute top-[-70px] right-[-90px] overflow-visible rotate-[45deg]
-                        md:h-[220px] md:w-[220px] md:top-[-55px] md:right-[-70px] md:rotate-[50deg]
-                        sm:h-[170px] sm:w-[170px] sm:top-[-40px] sm:right-[-55px] sm:rotate-[55deg]"
+        className="aspect-square h-[115px] z-5 flex-none w-[115px] absolute top-[-10px] right-[-40px] overflow-visible rotate-[55deg]
+                        sm:h-[200px] sm:w-[200px] sm:top-[-80px] sm:right-[-100px] sm:rotate-[50deg]
+                        md:h-[300px] md:w-[300px] md:top-[-45px] md:right-[-95px] md:rotate-[45deg]"
         initial={{ opacity: 0, x: 100, rotate: 0 }}
         animate={isInView ? { opacity: 0.9, x: 0, rotate: 45 } : { opacity: 0, x: 100, rotate: 0 }}
         transition={{ duration: 1.2, delay: 1.3, type: "spring", stiffness: 100 }}
@@ -585,13 +589,13 @@ const BentoSection = () => {
 
       {/* Top Left Corner - bentocard-float3 */}
       <motion.div
-        className="aspect-square h-[200px] z-5 flex-none w-[200px] absolute top-[150px] left-[40px] overflow-visible -rotate-[25deg]
-                        md:h-[160px] md:w-[160px] md:top-[120px] md:left-[30px] md:-rotate-[30deg]
-                        sm:h-[130px] sm:w-[130px] sm:top-[100px] sm:left-[20px] sm:-rotate-[30deg]"
+        className="aspect-square h-[80px] z-5 flex-none w-[80px] absolute top-[20px] left-[-30px] overflow-visible -rotate-[45deg]
+                        sm:h-[130px] sm:w-[130px] sm:top-[0px] sm:left-[-55px] sm:-rotate-[45deg]
+                        md:h-[200px] md:w-[200px] md:top-[-10px] md:left-[-70px] md:-rotate-[45deg]"
         initial={{ opacity: 0, x: -100, rotate: 0 }}
-        animate={isInView ? { opacity: 1, x: 0, rotate: -25 } : { opacity: 0, x: -100, rotate: 0 }}
+        animate={isInView ? { opacity: 1, x: 0, rotate: -45 } : { opacity: 0, x: -100, rotate: 0 }}
         transition={{ duration: 1.2, delay: 1.4, type: "spring", stiffness: 100 }}
-        whileHover={{ scale: 1.1, rotate: -30 }}
+        whileHover={{ scale: 1.1, rotate: -50 }}
       >
         <motion.img
           src="/bentocard-float3.png"
@@ -603,9 +607,9 @@ const BentoSection = () => {
 
       {/* Bottom Left Corner - bentocard-float3 */}
       <motion.div
-        className="aspect-[1.14841] h-[220px] z-5 flex-none gap-2.5 w-[253px] absolute bottom-[-90px] left-[-80px] overflow-visible rotate-[140deg]
-                        md:h-[180px] md:w-[207px] md:bottom-[-70px] md:left-[-60px] md:rotate-[145deg]
-                        sm:h-0 sm:w-0"
+        className="aspect-[1.14841] h-0 z-5 flex-none gap-2.5 w-0 absolute bottom-0 left-0 overflow-visible
+                        sm:h-[140px] sm:w-[161px] sm:bottom-[-55px] sm:left-[-50px] sm:rotate-[145deg]
+                        md:h-[220px] md:w-[253px] md:bottom-[-90px] md:left-[-80px] md:rotate-[140deg]"
         initial={{ opacity: 0, y: 100, rotate: 100 }}
         animate={isInView ? { opacity: 0.85, y: 0, rotate: 140 } : { opacity: 0, y: 100, rotate: 100 }}
         transition={{ duration: 1.2, delay: 1.5, type: "spring", stiffness: 90 }}
@@ -621,9 +625,9 @@ const BentoSection = () => {
 
       {/* Bottom Right Corner - bentocard-float1 */}
       <motion.div
-        className="aspect-square h-[160px] z-5 flex-none w-[160px] absolute bottom-[-50px] right-[-60px] overflow-visible rotate-[20deg]
-                        md:h-[140px] md:w-[140px] md:bottom-[-40px] md:right-[-50px]
-                        sm:h-[110px] sm:w-[110px] sm:bottom-[-30px] sm:right-[-40px]"
+        className="aspect-square h-[70px] z-5 flex-none w-[70px] absolute bottom-[-20px] right-[-25px] overflow-visible rotate-[20deg]
+                        sm:h-[110px] sm:w-[110px] sm:bottom-[-30px] sm:right-[-35px]
+                        md:h-[160px] md:w-[160px] md:bottom-[-50px] md:right-[-60px]"
         initial={{ opacity: 0, x: 100, y: 100, rotate: 0, scale: 0.5 }}
         animate={isInView ? { opacity: 0.95, x: 0, y: 0, rotate: 20, scale: 1 } : { opacity: 0, x: 100, y: 100, rotate: 0, scale: 0.5 }}
         transition={{ duration: 1.3, delay: 1.6, type: "spring", stiffness: 85 }}

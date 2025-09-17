@@ -261,7 +261,7 @@ body {
   gap: 8px;
   /* Mobile first - default */
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: 3fr 2fr 3fr 2fr;
   grid-template-areas: 
     "card1"
     "card2"
@@ -280,6 +280,7 @@ body {
 @media (min-width: 768px) and (max-width: 1023px) {
   .bento-grid {
     width: var(--width-tablet, 760px) !important;
+    grid-template-rows: 3fr 2fr 3fr 2fr;
   }
 }
 
