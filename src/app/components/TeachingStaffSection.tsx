@@ -355,11 +355,10 @@ export default function TeachingStaffSection() {
 
 
       {/* Title Section */}
-      <div className={`bg-primary flex flex-row justify-center items-center gap-2.5 w-auto h-min px-4 py-6 relative overflow-hidden ${isVisible ? 'animate-title-dramatic-in' : 'opacity-0'}`}>
+      <div className={`bg-primary flex flex-row justify-center items-center gap-2.5 w-full max-w-[90vw] sm:w-auto h-min px-4 py-6 relative overflow-hidden ${isVisible ? 'animate-title-dramatic-in' : 'opacity-0'}`}>
         {/* Single Title for all devices */}
-        <div className="outline-none flex flex-col justify-start flex-shrink-0">
-          <p className="font-inter font-bold text-center text-blue-prime"
-             style={{ fontSize: 'clamp(30px, 5vw, 60px)' }}>
+        <div className="outline-none flex flex-col justify-start flex-shrink-0 max-w-full">
+          <p className="font-inter font-bold text-center text-blue-prime whitespace-normal break-all text-[30px] sm:text-[35px] md:text-[40px] lg:text-[50px] xl:text-[60px]">
             ĐỘI NGŨ GIẢNG DẠY - CHUYÊN MÔN
           </p>
         </div>
@@ -431,9 +430,10 @@ export default function TeachingStaffSection() {
       
       {/* Top Right Corner - bentocard-float2 */}
       <motion.div
-        className="aspect-square h-[300px] z-5 flex-none w-[300px] absolute top-[20px] right-[-80px] overflow-visible rotate-[35deg]
+        className="aspect-square h-[80px] z-5 flex-none w-[80px] absolute top-[-20px] right-[-25px] overflow-visible rotate-[45deg]
+                        sm:h-[180px] sm:w-[180px] sm:top-[-40px] sm:right-[-50px] sm:rotate-[45deg]
                         md:h-[240px] md:w-[240px] md:top-[15px] md:right-[-60px] md:rotate-[40deg]
-                        sm:h-[180px] sm:w-[180px] sm:top-[10px] sm:right-[-45px] sm:rotate-[45deg]"
+                        lg:h-[300px] lg:w-[300px] lg:top-[20px] lg:right-[-80px] lg:rotate-[35deg]"
         initial={{ opacity: 0, x: 100, rotate: 0 }}
         animate={isVisible ? { opacity: 1, x: 0, rotate: 35 } : { opacity: 0, x: 100, rotate: 0 }}
         transition={{ duration: 1.2, delay: 1.5, type: "spring", stiffness: 100 }}
@@ -449,11 +449,12 @@ export default function TeachingStaffSection() {
 
       {/* Top Left Corner - bentocard-float3 */}
       <motion.div
-        className="aspect-square h-[220px] z-5 flex-none w-[220px] absolute top-[120px] left-[20px] overflow-visible
-                        md:h-[180px] md:w-[180px] md:top-[100px] md:left-[15px]
-                        sm:h-[140px] sm:w-[140px] sm:top-[80px] sm:left-[10px]"
-        initial={{ opacity: 0, x: -100, rotate: 0 }}
-        animate={isVisible ? { opacity: 1, x: 0, rotate: 0 } : { opacity: 0, x: -100, rotate: 0 }}
+        className="aspect-square h-[60px] z-5 flex-none w-[60px] absolute top-[-10px] left-[-5px] overflow-visible -rotate-[38deg]
+                        sm:h-[100px] sm:w-[100px] sm:top-[30px] sm:left-[-20px] sm:rotate-[5deg]
+                        md:h-[180px] md:w-[180px] md:top-[100px] md:left-[15px] md:rotate-0
+                        lg:h-[220px] lg:w-[220px] lg:top-[120px] lg:left-[20px]"
+        initial={{ opacity: 0, x: -100, rotate: -45 }}
+        animate={isVisible ? { opacity: 1, x: 0, rotate: -38 } : { opacity: 0, x: -100, rotate: -45 }}
         transition={{ duration: 1.2, delay: 1.6, type: "spring", stiffness: 100 }}
         whileHover={{ scale: 1.1 }}
       >
@@ -467,9 +468,10 @@ export default function TeachingStaffSection() {
 
       {/* Bottom Left Corner - bentocard-float1 */}
       <motion.div
-        className="aspect-square h-[200px] z-5 flex-none w-[200px] absolute bottom-[20px] left-[-30px] overflow-visible rotate-[130deg]
+        className="aspect-square h-[70px] z-5 flex-none w-[70px] absolute bottom-[10px] left-[-15px] overflow-visible rotate-[140deg]
+                        sm:h-[120px] sm:w-[120px] sm:bottom-[-10px] sm:left-[-20px] sm:rotate-[140deg]
                         md:h-[160px] md:w-[160px] md:bottom-[15px] md:left-[-25px] md:rotate-[135deg]
-                        sm:h-[120px] sm:w-[120px] sm:bottom-[10px] sm:left-[-20px] sm:rotate-[140deg]"
+                        lg:h-[200px] lg:w-[200px] lg:bottom-[20px] lg:left-[-30px] lg:rotate-[130deg]"
         initial={{ opacity: 0, y: 100, rotate: 90 }}
         animate={isVisible ? { opacity: 1, y: 0, rotate: 130 } : { opacity: 0, y: 100, rotate: 90 }}
         transition={{ duration: 1.2, delay: 1.7, type: "spring", stiffness: 90 }}
