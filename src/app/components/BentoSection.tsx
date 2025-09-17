@@ -229,7 +229,7 @@ const BentoSection = () => {
 
       {/* Bento Card Grid - Custom CSS Grid with grid-template-areas */}
       <motion.div
-        className="bento-grid z-10 p-0 w-full max-w-[1000px] h-[593px] flex-shrink-0 relative"
+        className="bento-grid z-10 p-0 w-full max-w-[1000px] h-[801px] sm:h-[593px] flex-shrink-0 relative"
         style={{
           width: 'min(1000px, 90vw)',
           '--width-mobile': '362px',
@@ -384,7 +384,7 @@ const BentoSection = () => {
               </div>
             </div>
             {/* Description - Responsive width */}
-            <div className="outline-none flex flex-col justify-start flex-shrink-0 w-[260px] sm:w-[280px] md:w-full">
+            <div className="bento-card-2-description outline-none flex flex-col justify-start flex-shrink-0">
               {/* Desktop/Tablet Description */}
               <div className="hidden lg:block">
                 <p className="text-[14px] font-normal leading-[18px] text-left text-white-framer opacity-80">Tặng kèm bộ EBook 4 Cẩm nang Toán – Tiếng Việt – Tiếng Anh – Tư duy Khoa học và EBook Thực Chiến Đề Thi kèm lời giải chi tiết</p>
@@ -476,7 +476,7 @@ const BentoSection = () => {
               </div>
               {/* Mobile Description */}
               <div className="block sm:hidden">
-                <p className="text-[13px] font-normal leading-[1.2] text-left text-white-framer opacity-80">Học phí ưu đãi chỉ từ 2.690.000 VNĐ cho trọn khóa học đến khi thi Đợt 2</p>
+                <p className="text-[16px] font-normal leading-[1.3] text-left text-white-framer opacity-80">Học phí ưu đãi chỉ từ 2.690.000 VNĐ cho trọn khóa học đến khi thi Đợt 2</p>
               </div>
             </div>
           </div>
@@ -513,7 +513,7 @@ const BentoSection = () => {
           }}
         >
           {/* Heading & Supporting Text */}
-          <div className="flex flex-col justify-start items-start gap-[5px] w-[380px] h-min p-0 relative overflow-visible z-30
+          <div className="absolute top-[8px] left-[15px] flex flex-col justify-start items-start gap-[5px] w-auto h-min p-0 overflow-visible z-30
                           sm:z-30 sm:gap-[3.73px] sm:w-[280px] sm:absolute sm:top-[11px] sm:left-[19px]">
             <div className="outline-none flex flex-col justify-start flex-shrink-0 w-[200px]">
               {/* Desktop/Tablet Title */}
@@ -526,14 +526,15 @@ const BentoSection = () => {
               </div>
             </div>
             {/* Description */}
-            <div className="outline-none flex flex-col justify-start flex-shrink-0 w-[350px]">
+            <div className="outline-none flex flex-col justify-start flex-shrink-0 w-[280px] sm:w-[380px] md:w-[380px] lg:w-[350px]">
               <p className="text-[16px] font-normal leading-[1.3] text-left text-white-framer opacity-80 whitespace-normal">Giúp học viên xây nền vững – ôn cấp tốc – luyện đề thực chiến – tối ưu điểm số cả 2 đợt thi</p>
             </div>
           </div>
           {/* Lightning 1 - Ở góc dưới phải cardbento với glow effect */}
-          <div className="absolute z-20 w-[800px] h-[600px] bottom-[-220px] right-[-140px] overflow-visible
+          <div className="absolute z-20 w-[153px] h-[115px] bottom-[5px] right-[-45px] overflow-visible
+                          sm:w-[430px] sm:h-[320px] sm:bottom-[-125px] sm:right-[-75px]
                           md:w-[550px] md:h-[415px] md:bottom-[-160px] md:right-[-100px]
-                          sm:w-[430px] sm:h-[320px] sm:bottom-[-125px] sm:right-[-75px]">
+                          lg:w-[800px] lg:h-[600px] lg:bottom-[-220px] lg:right-[-140px]">
             {/* Glow effect background cho lightning 1 */}
             <div className="absolute inset-0 w-full h-full opacity-20"
                  style={{
@@ -557,9 +558,10 @@ const BentoSection = () => {
           </div>
           
           {/* Lightning 2 - Chồng gần lightning 1 ở góc dưới phải với glow effect */}
-          <div className="absolute z-19 w-[800px] h-[600px] bottom-[-250px] right-[-160px] overflow-visible
+          <div className="absolute z-19 w-[153px] h-[115px] bottom-[-5px] right-[-50px] overflow-visible
+                          sm:w-[430px] sm:h-[320px] sm:bottom-[-145px] sm:right-[-90px]
                           md:w-[550px] md:h-[415px] md:bottom-[-185px] md:right-[-115px]
-                          sm:w-[430px] sm:h-[320px] sm:bottom-[-145px] sm:right-[-90px]">
+                          lg:w-[800px] lg:h-[600px] lg:bottom-[-250px] lg:right-[-160px]">
             {/* Glow effect background cho lightning 2 */}
             <div className="absolute inset-0 w-full h-full opacity-15"
                  style={{

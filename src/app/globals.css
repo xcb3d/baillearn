@@ -282,10 +282,19 @@ body {
   top: 60%;
 }
 
+/* Custom width for card 2 description */
+.bento-card-2-description {
+  width: 260px; /* Mobile default */
+}
+
 @media (min-width: 640px) and (max-width: 1023px) {
   .bento-card-3-image {
     left: 85%; /* Tablet */
     top: 60%;
+  }
+  
+  .bento-card-2-description {
+    width: 450px; /* Tablet */
   }
 }
 
@@ -293,6 +302,10 @@ body {
   .bento-card-3-image {
     left: 45%; /* Desktop - moved right 10% more */
     top: 70%; /* Desktop - moved down more */
+  }
+  
+  .bento-card-2-description {
+    width: 280px; /* Desktop */
   }
 }
 
