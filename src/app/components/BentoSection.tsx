@@ -254,9 +254,10 @@ const BentoSection = () => {
           }}
         >
           {/* Heading & Supporting Text - Luôn ở góc trái trên cùng */}
-          <div className="z-10 flex flex-col justify-start items-start gap-[5px] w-[600px] h-min p-0 absolute top-8 left-8 overflow-hidden
-                          md:w-[500px] md:top-8 md:left-8
-                          sm:gap-[4.12px] sm:w-[300px] sm:top-[16px] sm:left-[20px]">
+          <div className="z-10 flex flex-col justify-start items-start gap-[5px] w-[300px] h-min p-0 absolute top-[10px] left-[15px] overflow-hidden
+                          sm:w-[300px] sm:top-[16px] sm:left-[20px] sm:gap-[4.12px]
+                          md:w-[500px] md:top-8 md:left-8 md:gap-[5px]
+                          lg:w-[600px] lg:top-8 lg:left-8">
             <div className="outline-none flex flex-col justify-start flex-shrink-0 w-full">
               {/* Desktop/Tablet Title */}
               <div className="hidden lg:block">
@@ -264,36 +265,39 @@ const BentoSection = () => {
               </div>
               {/* Mobile Title */}
               <div className="block lg:hidden">
-                <h2 className="font-inter font-bold tracking-[-0.02em] leading-[1.1] text-left text-primary" style={{ fontSize: 'clamp(28px, 5vw, 35px)' }}>Lộ trình học</h2>
+                <h2 className="font-inter font-bold tracking-[-0.02em] leading-[1.1] text-left text-primary
+                               text-[32px] sm:text-[36px]">
+                  Lộ trình học
+                </h2>
               </div>
             </div>
-            {/* Description - Tăng gấp đôi width */}
-            <div className="outline-none flex flex-col justify-start flex-shrink-0 w-full">
+            {/* Description - Responsive width */}
+            <div className="outline-none flex flex-col justify-start flex-shrink-0 w-[220px] sm:w-[280px] md:w-full">
               {/* Desktop/Tablet Description */}
               <div className="hidden lg:block">
                 <p className="text-[16px] font-normal leading-[20.8px] text-left text-white-framer opacity-80">Lộ trình &ldquo;TỪ CƠ BẢN ĐẾN CHUYÊN SÂU&rdquo; với hơn 300 buổi học, chia thành 3 giai đoạn chiến lược</p>
               </div>
               {/* Mobile Description */}
               <div className="block lg:hidden">
-                <p className="text-[13px] font-normal leading-[1.3] text-left text-white-framer opacity-80">Lộ trình &ldquo;TỪ CƠ BẢN ĐẾN CHUYÊN SÂU&rdquo; với hơn 300 buổi học, chia thành 3 giai đoạn chiến lược</p>
+                <p className="text-[13px] sm:text-[15px] font-normal leading-[1.3] text-left text-white-framer opacity-80">Lộ trình &ldquo;TỪ CƠ BẢN ĐẾN CHUYÊN SÂU&rdquo; với hơn 300 buổi học, chia thành 3 giai đoạn chiến lược</p>
               </div>
             </div>
           </div>
-          {/* Visual (Chart) - Bottom half on mobile/tablet, full on desktop */}
+          {/* Visual (Chart) - Bottom half on mobile/tablet, bottom aligned on desktop */}
           <div className="absolute overflow-visible
                           bottom-0 left-0 right-0 h-[55%]
                           sm:bottom-0 sm:h-[55%] sm:overflow-visible
-                          lg:inset-0 lg:h-full lg:left-0 lg:overflow-hidden">
+                          lg:bottom-[-50px] lg:left-0 lg:right-0 lg:h-[85%] lg:overflow-hidden">
             <motion.img 
               src="/chart.svg" 
               alt="Learning progress chart"
               className="absolute opacity-95
                          w-full h-auto min-h-full
                          -translate-x-[120px] translate-y-[45px] scale-[1.8]
-                         sm:-translate-x-[45px] sm:translate-y-[12px] sm:scale-[1.2]
-                         lg:translate-x-0 lg:translate-y-0 lg:scale-100 lg:h-full lg:min-h-0
+                         sm:translate-x-0 sm:-translate-y-[60px] sm:scale-100
+                         lg:absolute lg:inset-0 lg:translate-x-0 lg:translate-y-0 lg:scale-100 lg:min-h-0
                          object-cover object-top
-                         lg:object-center"
+                         lg:object-cover lg:object-[center_bottom]"
               style={{ 
                 filter: 'brightness(1.5)'
               }}
@@ -306,12 +310,14 @@ const BentoSection = () => {
             {/* Chart Cursor - Nằm trên SVG với width thoải mái - Desktop only */}
             <div className="hidden lg:flex absolute w-[150px] h-[255px] flex-col justify-center items-center gap-[10px] overflow-visible z-10"
                  style={{
-                   top: 'calc(78.2051% - 199.5px)',
-                   left: 'calc(85.4167% - 75px)'
+                   top: 'calc(65% - 142.5px)',
+                   left: 'calc(75% - 75px)'
                  }}>
                {/* Marker Container */}
                <div className="absolute top-[1px] w-[104px] h-[104px] flex flex-col justify-center items-center gap-[13px] overflow-hidden"
-                    style={{ left: 'calc(48.4375% - 52px)' }}>
+                    style={{ left: 'calc(48.4375% - 94px)',
+                      top: 'calc(65% - 185.5px)'
+                     }}>
                 
                 {/* Marker 1 - Largest circle */}
                 <div className="absolute bottom-0 left-0 right-0 aspect-square h-[104px] bg-primary opacity-35 flex-none overflow-hidden"
