@@ -456,8 +456,8 @@ const BentoSection = () => {
           }}
         >
           {/* Heading & Supporting Text */}
-          <div className="flex flex-col justify-center items-center gap-[5px] w-full h-min p-0 relative overflow-hidden
-                          sm:z-10 sm:gap-[3.73px] sm:w-auto sm:absolute sm:top-[17px] sm:left-[19px] sm:right-[19px]">
+          <div className="absolute top-[15px] left-[15px] right-[15px] flex flex-col justify-start items-start gap-[5px] w-auto h-min p-0 overflow-hidden
+                          sm:z-10 sm:gap-[3.73px] sm:absolute sm:top-[17px] sm:left-[19px] sm:right-[19px]">
             <div className="outline-none flex flex-col justify-start flex-shrink-0 w-full">
               {/* Desktop/Tablet Title */}
               <div className="hidden lg:block">
@@ -469,20 +469,20 @@ const BentoSection = () => {
               </div>
             </div>
             {/* Description */}
-            <div className="outline-none flex flex-col justify-start flex-shrink-0 w-full">
+            <div className="outline-none flex flex-col justify-start flex-shrink-0 w-[220px] sm:w-full">
               {/* Desktop/Tablet Description */}
-              <div className="hidden lg:block">
+              <div className="hidden sm:block">
                 <p className="text-[16px] font-normal leading-[1.3] text-left text-white-framer opacity-80">Học phí ưu đãi chỉ từ 2.690.000 VNĐ cho trọn khóa học đến khi thi Đợt 2</p>
               </div>
               {/* Mobile Description */}
-              <div className="block lg:hidden">
-                <p className="text-[16px] font-normal leading-[1.3] text-left text-white-framer opacity-80">Học phí ưu đãi chỉ từ 2.690.000 VNĐ cho trọn khóa học đến khi thi Đợt 2</p>
+              <div className="block sm:hidden">
+                <p className="text-[13px] font-normal leading-[1.2] text-left text-white-framer opacity-80">Học phí ưu đãi chỉ từ 2.690.000 VNĐ cho trọn khóa học đến khi thi Đợt 2</p>
               </div>
             </div>
           </div>
           {/* Visual */}
-          <div className="absolute top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible">
-            <div className="aspect-[0.639024] h-[235px] flex-none w-[150px] relative overflow-visible rotate-[29deg]
+          <div className="bento-card-3-image absolute -translate-x-1/2 -translate-y-1/2 overflow-visible">
+            <div className="aspect-[0.639024] h-[235px] flex-none w-[150px] relative overflow-visible rotate-[10deg]
                             md:h-auto md:w-[150px]
                             sm:h-auto sm:w-[150px]">
               <motion.img 
@@ -491,9 +491,9 @@ const BentoSection = () => {
                 className="w-full h-full rounded-lg"
                 loading="lazy"
                 initial={{ opacity: 0, scale: 1.1, rotate: 0 }}
-                animate={isInView ? { opacity: 1, scale: 1, rotate: 29 } : { opacity: 0, scale: 1.1, rotate: 0 }}
+                animate={isInView ? { opacity: 1, scale: 1, rotate: 10 } : { opacity: 0, scale: 1.1, rotate: 0 }}
                 transition={{ duration: 0.8, delay: 1.0 }}
-                whileHover={{ scale: 1.05, rotate: 35 }}
+                whileHover={{ scale: 1.05, rotate: 15 }}
               />
             </div>
           </div>

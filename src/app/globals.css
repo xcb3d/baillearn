@@ -276,6 +276,26 @@ body {
 .bento-card-3 { grid-area: card3; }
 .bento-card-4 { grid-area: card4; }
 
+/* Custom positioning for card 3 image */
+.bento-card-3-image {
+  left: 93%; /* Mobile default */
+  top: 60%;
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .bento-card-3-image {
+    left: 85%; /* Tablet */
+    top: 60%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bento-card-3-image {
+    left: 45%; /* Desktop - moved right 10% more */
+    top: 70%; /* Desktop - moved down more */
+  }
+}
+
 /* Tablet responsive - 768px to 1023px */
 @media (min-width: 768px) and (max-width: 1023px) {
   .bento-grid {
