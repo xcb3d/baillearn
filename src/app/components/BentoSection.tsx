@@ -366,22 +366,33 @@ const BentoSection = () => {
           }}
         >
           {/* Heading & Supporting Text - Luôn ở góc trái trên cùng */}
-          <div className="z-10 flex flex-col justify-start items-start gap-[5px] w-[297px] h-min p-0 absolute top-5 left-5 overflow-visible
-                          md:w-[297px] md:top-5 md:left-5
-                          sm:gap-[3.96px] sm:w-[255px] sm:top-2 sm:left-5">
-            <div className="outline-none flex flex-col justify-start flex-shrink-0">
+          <div className="z-10 flex flex-col justify-start items-start gap-[5px] w-[300px] h-min p-0 absolute top-[8px] left-[10px] overflow-visible
+                          sm:w-[550px] sm:top-[10px] sm:left-[15px] sm:gap-[4.12px]
+                          md:w-[500px] md:top-8 md:left-8 md:gap-[5px]
+                          lg:w-[600px] lg:top-8 lg:left-8">
+            <div className="outline-none flex flex-col justify-start flex-shrink-0 w-full">
               {/* Desktop/Tablet Title */}
               <div className="hidden lg:block">
-                <h5 className="font-inter font-bold text-left text-primary" style={{ fontSize: '30px' }}>Quà tặng</h5>
+                <h2 className="font-inter font-bold tracking-[-0.02em] leading-[1.1] text-left text-primary" style={{ fontSize: '36px' }}>Quà tặng</h2>
               </div>
               {/* Mobile Title */}
               <div className="block lg:hidden">
-                <h5 className="font-inter font-bold text-left text-primary" style={{ fontSize: '24px' }}>Quà tặng</h5>
+                <h2 className="font-inter font-bold tracking-[-0.02em] leading-[1.1] text-left text-primary
+                               text-[28px] sm:text-[32px]">
+                  Quà tặng
+                </h2>
               </div>
             </div>
-            {/* Description */}
-            <div className="outline-none flex flex-col justify-start flex-shrink-0 w-full max-w-[290px]">
-              <p className="text-[13px] leading-[1.3] text-left text-white-framer opacity-80">Tặng kèm bộ EBook 4 Cẩm nang Toán – Tiếng Việt – Tiếng Anh – Tư duy Khoa học và EBook Thực Chiến Đề Thi kèm lời giải chi tiết</p>
+            {/* Description - Responsive width */}
+            <div className="outline-none flex flex-col justify-start flex-shrink-0 w-[260px] sm:w-[280px] md:w-full">
+              {/* Desktop/Tablet Description */}
+              <div className="hidden lg:block">
+                <p className="text-[14px] font-normal leading-[18px] text-left text-white-framer opacity-80">Tặng kèm bộ EBook 4 Cẩm nang Toán – Tiếng Việt – Tiếng Anh – Tư duy Khoa học và EBook Thực Chiến Đề Thi kèm lời giải chi tiết</p>
+              </div>
+              {/* Mobile Description */}
+              <div className="block lg:hidden">
+                <p className="text-[13px] sm:text-[15px] font-normal leading-[1.3] text-left text-white-framer opacity-80">Tặng kèm bộ EBook 4 Cẩm nang Toán – Tiếng Việt – Tiếng Anh – Tư duy Khoa học và EBook Thực Chiến Đề Thi kèm lời giải chi tiết</p>
+              </div>
             </div>
           </div>
           {/* Bentocard2 Images - Framer Style (Swapped) */}
@@ -408,7 +419,7 @@ const BentoSection = () => {
             </div>
           </div>
           
-          <div className="absolute overflow-visible z-20 flex-none"
+          <div className="hidden lg:block absolute overflow-visible z-20 flex-none"
                style={{
                  aspectRatio: '0.818947',
                  height: '165px',
