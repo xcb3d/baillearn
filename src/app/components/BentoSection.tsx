@@ -30,14 +30,14 @@ const BentoSection = () => {
       >
         {/* Desktop/Tablet Title */}
         <div className="hidden lg:block">
-          <p className="font-roboto-flex-custom text-center text-primary" style={{ fontSize: '48px' }}>KHÓA HỌC</p>
-          <p className="font-roboto-flex-custom text-center text-primary" style={{ fontSize: '60px' }}>LUYỆN THI ĐGNL HCM 2026</p>
+          <p className="font-inter font-bold text-center text-primary" style={{ fontSize: '48px' }}>KHÓA HỌC</p>
+          <p className="font-inter font-bold text-center text-primary" style={{ fontSize: '60px' }}>LUYỆN THI ĐGNL HCM 2026</p>
         </div>
         {/* Mobile Title - Simplified responsive approach */}
         <div className="block lg:hidden">
-          <p className="font-roboto-flex-custom text-center text-primary"
+          <p className="font-inter font-bold text-center text-primary"
              style={{ fontSize: 'clamp(32px, 5vw, 40px)' }}>KHÓA HỌC</p>
-          <p className="font-roboto-flex-custom text-center text-primary"
+          <p className="font-inter font-bold text-center text-primary"
              style={{ fontSize: 'clamp(42px, 7vw, 52px)' }}>LUYỆN THI ĐGNL HCM 2026</p>
         </div>
       </motion.div>
@@ -260,11 +260,11 @@ const BentoSection = () => {
             <div className="outline-none flex flex-col justify-start flex-shrink-0 w-full">
               {/* Desktop/Tablet Title */}
               <div className="hidden lg:block">
-                <h2 className="font-roboto-flex-custom tracking-[-0.02em] leading-[1.1] text-left text-primary" style={{ fontSize: '42px' }}>Lộ trình học</h2>
+                <h2 className="font-inter font-bold tracking-[-0.02em] leading-[1.1] text-left text-primary" style={{ fontSize: '42px' }}>Lộ trình học</h2>
               </div>
               {/* Mobile Title */}
               <div className="block lg:hidden">
-                <h2 className="font-roboto-flex-custom tracking-[-0.02em] leading-[1.1] text-left text-primary" style={{ fontSize: 'clamp(28px, 5vw, 35px)' }}>Lộ trình học</h2>
+                <h2 className="font-inter font-bold tracking-[-0.02em] leading-[1.1] text-left text-primary" style={{ fontSize: 'clamp(28px, 5vw, 35px)' }}>Lộ trình học</h2>
               </div>
             </div>
             {/* Description - Tăng gấp đôi width */}
@@ -362,11 +362,11 @@ const BentoSection = () => {
             <div className="outline-none flex flex-col justify-start flex-shrink-0">
               {/* Desktop/Tablet Title */}
               <div className="hidden lg:block">
-                <h5 className="font-roboto-flex-custom text-left text-primary" style={{ fontSize: '30px' }}>Quà tặng</h5>
+                <h5 className="font-inter font-bold text-left text-primary" style={{ fontSize: '30px' }}>Quà tặng</h5>
               </div>
               {/* Mobile Title */}
               <div className="block lg:hidden">
-                <h5 className="font-roboto-flex-custom text-left text-primary" style={{ fontSize: '24px' }}>Quà tặng</h5>
+                <h5 className="font-inter font-bold text-left text-primary" style={{ fontSize: '24px' }}>Quà tặng</h5>
               </div>
             </div>
             {/* Description */}
@@ -440,11 +440,11 @@ const BentoSection = () => {
             <div className="outline-none flex flex-col justify-start flex-shrink-0 w-full">
               {/* Desktop/Tablet Title */}
               <div className="hidden lg:block">
-                <h5 className="font-roboto-flex-custom text-left text-primary" style={{ fontSize: '40px' }}>Học phí</h5>
+                <h5 className="font-inter font-bold text-left text-primary" style={{ fontSize: '40px' }}>Học phí</h5>
               </div>
               {/* Mobile Title */}
               <div className="block lg:hidden">
-                <h5 className="font-roboto-flex-custom text-left text-primary" style={{ fontSize: '30px' }}>Học phí</h5>
+                <h5 className="font-inter font-bold text-left text-primary" style={{ fontSize: '30px' }}>Học phí</h5>
               </div>
             </div>
             {/* Description */}
@@ -497,11 +497,11 @@ const BentoSection = () => {
             <div className="outline-none flex flex-col justify-start flex-shrink-0 w-[200px]">
               {/* Desktop/Tablet Title */}
               <div className="hidden lg:block">
-                <h5 className="font-roboto-flex-custom text-left text-primary" style={{ fontSize: '40px' }}>Mục tiêu</h5>
+                <h5 className="font-inter font-bold text-left text-primary" style={{ fontSize: '40px' }}>Mục tiêu</h5>
               </div>
               {/* Mobile Title */}
               <div className="block lg:hidden">
-                <h5 className="font-roboto-flex-custom text-left text-primary" style={{ fontSize: '30px' }}>Mục tiêu</h5>
+                <h5 className="font-inter font-bold text-left text-primary" style={{ fontSize: '30px' }}>Mục tiêu</h5>
               </div>
             </div>
             {/* Description */}

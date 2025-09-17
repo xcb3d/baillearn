@@ -145,9 +145,9 @@ export default function HeroSection() {
                 transition={{ duration: 0.8, delay: 1.0, type: "spring", stiffness: 200 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <motion.p 
-                  className="font-roboto-flex-custom text-hero leading-[1.1em] text-center text-blue-prime" 
-                  style={{letterSpacing: '0.05em', textShadow: '3px 3px 0px rgba(0,0,0,0.2)'}}
+                <motion.p
+                  className="font-roboto-flex-custom text-hero leading-[1.1em] text-center text-blue-prime"
+                  style={{letterSpacing: '0.05em'}}
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ duration: 0.6, delay: 1.2 }}

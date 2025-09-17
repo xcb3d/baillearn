@@ -358,7 +358,7 @@ export default function TeachingStaffSection() {
       <div className={`bg-primary flex flex-row justify-center items-center gap-2.5 w-auto h-min px-4 py-6 relative overflow-hidden ${isVisible ? 'animate-title-dramatic-in' : 'opacity-0'}`}>
         {/* Single Title for all devices */}
         <div className="outline-none flex flex-col justify-start flex-shrink-0">
-          <p className="font-roboto-flex-custom text-center text-blue-prime"
+          <p className="font-inter font-bold text-center text-blue-prime"
              style={{ fontSize: 'clamp(30px, 5vw, 60px)' }}>
             ĐỘI NGŨ GIẢNG DẠY - CHUYÊN MÔN
           </p>

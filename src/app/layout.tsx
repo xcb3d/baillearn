@@ -1,14 +1,7 @@
 import type { Metadata } from "next";
-import { Roboto_Flex, Inter } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScrolling from "./components/SmoothScrolling";
-
-const robotoFlex = Roboto_Flex({
-  variable: "--font-roboto-flex",
-  subsets: ["latin", "vietnamese"],
-  weight: "variable", // Use variable font
-  display: "swap",
-});
 
 const inter = Inter({
   variable: "--font-inter",
@@ -28,8 +21,45 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi">
+      <head>
+        {/* Google Fonts preconnect */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://framerusercontent.com" crossOrigin="anonymous" />
+        
+        {/* Roboto Flex Variable preloads */}
+        <link
+          rel="preload"
+          href="https://fonts.gstatic.com/s/robotoflex/v30/NaPccZLOBv5T3oB7Cb4i0zu6RME.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="https://fonts.gstatic.com/s/robotoflex/v30/NaPccZLOBv5T3oB7Cb4i0zu1RMH-CQ.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        {/* Inter fonts preloads */}
+        <link
+          rel="preload"
+          href="https://framerusercontent.com/assets/GrgcKwrN6d3Uz8EwcLHZxwEfC4.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="https://framerusercontent.com/assets/VgYFWiwsAC5OYxAycRXXvhze58.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body
-        className={`${robotoFlex.variable} ${inter.variable} box-border m-0 p-0 antialiased font-inter text-sm`}
+        className={`${inter.variable} box-border m-0 p-0 antialiased font-inter text-sm`}
       >
         <SmoothScrolling>
           {children}

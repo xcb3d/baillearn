@@ -385,7 +385,7 @@ export default function GlowUpSection() {
           </motion.div>
 
           <motion.p
-            className="font-roboto-flex-custom text-center text-blue-prime mb-2"
+            className="font-inter font-black text-center text-blue-prime mb-2"
             style={{ fontSize: '45px' }}
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
@@ -393,8 +393,8 @@ export default function GlowUpSection() {
             GÓC GLOW-UP
           </motion.p>
           <motion.p
-            className="font-roboto-flex text-center text-blue-prime"
-            style={{ fontSize: '27px', fontWeight: '600' }}
+            className="font-inter font-semibold text-center text-blue-prime"
+            style={{ fontSize: '27px' }}
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
           >
