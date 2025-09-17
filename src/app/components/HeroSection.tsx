@@ -132,7 +132,7 @@ export default function HeroSection() {
       <div className="flex-none w-full max-w-[1152px] h-auto md:h-[524px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-4 md:px-6 lg:px-0">
         
         {/* Header Content */}
-        <div className="will-change-transform z-20 flex flex-col justify-center items-center gap-4 md:gap-6 lg:gap-12 h-min px-0 py-4 md:py-8 lg:py-[57px] absolute top-1/2 left-0 right-0 overflow-visible -translate-y-1/2" 
+        <div className="will-change-transform z-20 flex flex-col justify-center items-center gap-4 md:gap-6 lg:gap-12 h-min px-0 py-4 md:py-8 lg:py-[57px] absolute top-1/2 -mt-20 md:mt-0 left-0 right-0 overflow-visible -translate-y-1/2" 
              data-framer-name="Header Content">
           <header className="flex flex-col justify-center items-center gap-3 md:gap-4 lg:gap-6 w-full h-min p-0 relative overflow-visible" 
                   data-framer-name="Header">
