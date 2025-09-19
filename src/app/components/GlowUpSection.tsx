@@ -224,8 +224,11 @@ const AutoScrollCarousel = ({ isInView }: { isInView: boolean }) => {
 
     const scroll = () => {
       if (scrollContainer) {
-        // Tốc độ cuộn: bình thường 2.15, khi hover chậm lại 1.0
-        const scrollSpeed = isHovering ? 1.0 : 2.15;
+        // Check if mobile
+        const isMobile = window.innerWidth < 768;
+        // Tốc độ cuộn: Mobile chậm hơn, desktop giữ nguyên
+        const baseSpeed = isMobile ? 1.2 : 2.15;
+        const scrollSpeed = isHovering ? (isMobile ? 0.6 : 1.0) : baseSpeed;
         scrollContainer.scrollLeft += scrollSpeed;
         
         // Infinite scroll: Reset về giữa khi gần cuối để tạo hiệu ứng vĩnh cữu

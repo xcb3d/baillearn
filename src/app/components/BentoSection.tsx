@@ -73,9 +73,14 @@ const BentoSection = () => {
                 hover: {
                   opacity: 0.3,
                   scale: 1.1,
-                  filter: "blur(20px)",
-                  transition: { duration: 0.3 }
+                  filter: "blur(20px)"
                 }
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 400,
+                damping: 25,
+                mass: 0.3
               }}
             />
             
@@ -106,14 +111,14 @@ const BentoSection = () => {
                     scale: 1.5,
                     rotate: 10,
                     x: 8,
-                    y: -8,
-                    transition: {
-                      duration: 0.5,
-                      type: "spring",
-                      stiffness: 200,
-                      damping: 15
-                    }
+                    y: -8
                   }
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 25,
+                  mass: 0.3
                 }}
               >
                     <Image
@@ -142,15 +147,14 @@ const BentoSection = () => {
                     scale: 1.4,
                     rotate: -15,
                     x: -10,
-                    y: -10,
-                    transition: {
-                      duration: 0.5,
-                      delay: 0.05,
-                      type: "spring",
-                      stiffness: 200,
-                      damping: 15
-                    }
+                    y: -10
                   }
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 25,
+                  mass: 0.3
                 }}
               >
                 <Image
@@ -179,15 +183,14 @@ const BentoSection = () => {
                     scale: 1.6,
                     rotate: 20,
                     x: 12,
-                    y: 8,
-                    transition: {
-                      duration: 0.5,
-                      delay: 0.1,
-                      type: "spring",
-                      stiffness: 200,
-                      damping: 15
-                    }
+                    y: 8
                   }
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 25,
+                  mass: 0.3
                 }}
               >
                 <Image
@@ -206,9 +209,14 @@ const BentoSection = () => {
                 initial={{ opacity: 0 }}
                 variants={{
                   hover: {
-                    opacity: 1,
-                    transition: { duration: 0.3 }
+                    opacity: 1
                   }
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 25,
+                  mass: 0.3
                 }}
               >
                 <motion.div
@@ -216,9 +224,14 @@ const BentoSection = () => {
                   initial={{ x: "-100%" }}
                   variants={{
                     hover: {
-                      x: "200%",
-                      transition: { duration: 0.6, ease: "easeInOut" }
+                      x: "200%"
                     }
+                  }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 30,
+                    mass: 0.5
                   }}
                 />
               </motion.div>
@@ -249,8 +262,13 @@ const BentoSection = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           whileHover={{ 
             scale: 1.02,
-            borderColor: "rgba(255, 215, 0, 0.8)",
-            transition: { type: "spring", stiffness: 300, damping: 20 }
+            borderColor: "rgb(255, 215, 0)",
+            transition: {
+              type: "spring", 
+              stiffness: 400, 
+              damping: 25,
+              mass: 0.3
+            }
           }}
         >
           {/* Heading & Supporting Text - Luôn ở góc trái trên cùng */}
@@ -361,8 +379,13 @@ const BentoSection = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           whileHover={{ 
             scale: 1.02,
-            borderColor: "rgba(255, 215, 0, 0.8)",
-            transition: { type: "spring", stiffness: 300, damping: 20 }
+            borderColor: "rgb(255, 215, 0)",
+            transition: {
+              type: "spring", 
+              stiffness: 400, 
+              damping: 25,
+              mass: 0.3
+            }
           }}
         >
           {/* Heading & Supporting Text - Luôn ở góc trái trên cùng */}
@@ -451,8 +474,13 @@ const BentoSection = () => {
           transition={{ duration: 0.6, delay: 0.7 }}
           whileHover={{ 
             scale: 1.02,
-            borderColor: "rgba(255, 215, 0, 0.8)",
-            transition: { type: "spring", stiffness: 300, damping: 20 }
+            borderColor: "rgb(255, 215, 0)",
+            transition: {
+              type: "spring", 
+              stiffness: 400, 
+              damping: 25,
+              mass: 0.3
+            }
           }}
         >
           {/* Heading & Supporting Text */}
@@ -508,8 +536,13 @@ const BentoSection = () => {
           transition={{ duration: 0.6, delay: 0.8 }}
           whileHover={{ 
             scale: 1.02,
-            borderColor: "rgba(255, 215, 0, 0.8)",
-            transition: { type: "spring", stiffness: 300, damping: 20 }
+            borderColor: "rgb(255, 215, 0)",
+            transition: {
+              type: "spring", 
+              stiffness: 400, 
+              damping: 25,
+              mass: 0.3
+            }
           }}
         >
           {/* Heading & Supporting Text */}

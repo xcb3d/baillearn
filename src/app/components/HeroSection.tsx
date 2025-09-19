@@ -17,7 +17,7 @@ export default function HeroSection() {
     <section
       ref={sectionRef}
       id="khoa-free"
-      className="bg-blue-prime flex flex-col gap-12 w-full h-[500px] md:h-[600px] lg:h-[670px] relative overflow-hidden"
+      className="bg-blue-prime flex flex-col gap-12 w-full h-[550px] md:h-[650px] lg:h-[720px] relative overflow-hidden"
       data-framer-name="Hero Section">
       <header className="flex flex-col justify-center items-center gap-5 w-full h-min p-4 md:p-6 lg:p-10 absolute top-[-35px] left-0 overflow-hidden" 
               id="home" 
@@ -25,19 +25,30 @@ export default function HeroSection() {
       
       {/* Images - Student Photos */}
       <motion.div 
-        className="will-change-transform flex-none w-[150px] md:w-[180px] lg:w-[300px] h-[290px] md:h-[348px] lg:h-[580px] absolute bottom-[-50px] md:bottom-0 left-[-5px] md:left-[-5px] lg:left-[-5px] overflow-hidden" 
+        className="will-change-transform flex-none w-[170px] md:w-[200px] lg:w-[330px] h-[320px] md:h-[378px] lg:h-[620px] absolute bottom-[-50px] md:bottom-0 left-[-5px] md:left-[-5px] lg:left-[-5px] overflow-hidden"
         data-framer-name="Bảo"
         initial={{ opacity: 0, x: -100 }}
         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
         transition={{ duration: 0.8, delay: 0.2 }}
+        whileHover="hover"
       >
         <motion.div 
-          className="aspect-[0.707847] h-[195px] md:h-[234px] lg:h-[389px] flex-none w-[137px] md:w-[165px] lg:w-[275px] absolute top-2 md:top-3 lg:top-5 right-[-7px] md:right-[-10px] lg:right-[-14px] overflow-visible rotate-[9deg]" 
+          className="aspect-[0.707847] h-[215px] md:h-[254px] lg:h-[419px] flex-none w-[155px] md:w-[185px] lg:w-[305px] absolute top-2 md:top-3 lg:top-5 right-[-7px] md:right-[-10px] lg:right-[-14px] overflow-visible"
           data-framer-name="Ảnh 3 (1) 1"
           initial={{ opacity: 0, scale: 0.8, rotate: 0 }}
           animate={isInView ? { opacity: 1, scale: 1, rotate: 9 } : { opacity: 0, scale: 0.8, rotate: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          whileHover={{ scale: 1.05, rotate: 12 }}
+          variants={{
+            hover: {
+              rotate: 15,
+              scale: 1.05
+            }
+          }}
+          transition={{ 
+            type: "spring",
+            stiffness: 400,
+            damping: 25,
+            mass: 0.5
+          }}
         >
           <Image
             src="/bao.png"
@@ -49,12 +60,22 @@ export default function HeroSection() {
           />
         </motion.div>
         <motion.div 
-          className="aspect-square h-[201px] md:h-[241px] lg:h-[402px] flex-none absolute bottom-[-71px] md:bottom-[-86px] lg:bottom-[-143px] left-[-49px] md:left-[-59px] lg:left-[-99px] right-[-1px] md:right-[-2px] lg:right-[-3px] overflow-visible -rotate-[25deg]" 
+          className="aspect-square h-[201px] md:h-[241px] lg:h-[402px] flex-none absolute bottom-[-71px] md:bottom-[-86px] lg:bottom-[-143px] left-[-49px] md:left-[-59px] lg:left-[-99px] right-[-1px] md:right-[-2px] lg:right-[-3px] overflow-visible" 
           data-framer-name="Frame 339"
           initial={{ opacity: 0, scale: 0.8, rotate: 0 }}
           animate={isInView ? { opacity: 1, scale: 1, rotate: -25 } : { opacity: 0, scale: 0.8, rotate: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          whileHover={{ scale: 1.05, rotate: -20 }}
+          variants={{
+            hover: {
+              rotate: -35,
+              scale: 1.1
+            }
+          }}
+          transition={{ 
+            type: "spring",
+            stiffness: 400,
+            damping: 25,
+            mass: 0.5
+          }}
         >
           <Image
             src="/bentocard-float2.png"
@@ -68,19 +89,38 @@ export default function HeroSection() {
       </motion.div>
 
       <motion.div 
-        className="will-change-transform flex-none w-[155px] md:w-[186px] lg:w-[311px] h-[289px] md:h-[346px] lg:h-[578px] absolute bottom-[-66px] md:bottom-[-24px] lg:bottom-[-33px] right-[-9px] md:right-[-14px] lg:right-[-19px] overflow-hidden" 
+        className="will-change-transform flex-none w-[175px] md:w-[206px] lg:w-[341px] h-[319px] md:h-[376px] lg:h-[618px] absolute bottom-[-66px] md:bottom-[-24px] lg:bottom-[-33px] right-[-9px] md:right-[-14px] lg:right-[-19px] overflow-hidden"
         data-framer-name="Hải"
         initial={{ opacity: 0, x: 100 }}
         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
         transition={{ duration: 0.8, delay: 0.3 }}
+        whileHover="hover"
       >
         <motion.div 
-          className="flex-none w-[141px] md:w-[170px] lg:w-[283px] h-[200px] md:h-[240px] lg:h-[400px] absolute top-1 md:top-1 lg:top-2 left-[calc(50.8039%_-_70.5px)] md:left-[calc(50.8039%_-_85px)] lg:left-[calc(50.8039%_-_141.5px)] overflow-visible -rotate-[3deg]" 
+          className="flex-none w-[161px] md:w-[190px] lg:w-[313px] h-[220px] md:h-[260px] lg:h-[430px] absolute top-1 md:top-1 lg:top-2 left-[calc(50.8039%_-_80.5px)] md:left-[calc(50.8039%_-_95px)] lg:left-[calc(50.8039%_-_156.5px)] overflow-visible"
           data-framer-name="Hưng 1"
           initial={{ opacity: 0, scale: 0.8, rotate: 0 }}
-          animate={isInView ? { opacity: 1, scale: 1, rotate: -3 } : { opacity: 0, scale: 0.8, rotate: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          whileHover={{ scale: 1.05, rotate: 0 }}
+          animate={isInView ? { 
+            opacity: 1, 
+            scale: 1, 
+            rotate: -3
+          } : { 
+            opacity: 0, 
+            scale: 0.8, 
+            rotate: 0 
+          }}
+          variants={{
+            hover: {
+              rotate: 5,
+              scale: 1.05
+            }
+          }}
+          transition={{ 
+            type: "spring",
+            stiffness: 400,
+            damping: 25,
+            mass: 0.5
+          }}
         >
           <Image
             src="/hai.png"
@@ -92,12 +132,30 @@ export default function HeroSection() {
           />
         </motion.div>
         <motion.div 
-          className="z-10 flex-none gap-2.5 w-[128px] md:w-[154px] lg:w-[256px] h-[111px] md:h-[134px] lg:h-[223px] absolute bottom-5 md:bottom-7 lg:bottom-10 left-[calc(45.3376%_-_64px)] md:left-[calc(45.3376%_-_77px)] lg:left-[calc(45.3376%_-_128px)] overflow-visible -rotate-[75deg]" 
+          className="z-10 flex-none gap-2.5 w-[128px] md:w-[154px] lg:w-[256px] h-[111px] md:h-[134px] lg:h-[223px] absolute bottom-5 md:bottom-7 lg:bottom-10 left-[calc(45.3376%_-_64px)] md:left-[calc(45.3376%_-_77px)] lg:left-[calc(45.3376%_-_128px)] overflow-visible" 
           data-framer-name="Frame 341"
           initial={{ opacity: 0, scale: 0.8, rotate: 0 }}
-          animate={isInView ? { opacity: 1, scale: 1, rotate: -75 } : { opacity: 0, scale: 0.8, rotate: 0 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
-          whileHover={{ scale: 1.05, rotate: -70 }}
+          animate={isInView ? { 
+            opacity: 1, 
+            scale: 1, 
+            rotate: -75
+          } : { 
+            opacity: 0, 
+            scale: 0.8, 
+            rotate: 0 
+          }}
+          variants={{
+            hover: {
+              rotate: -85,
+              scale: 1.1
+            }
+          }}
+          transition={{ 
+            type: "spring",
+            stiffness: 400,
+            damping: 25,
+            mass: 0.5
+          }}
         >
           <Image
             src="/bentocard-float1.png"
@@ -143,7 +201,6 @@ export default function HeroSection() {
                 initial={{ opacity: 0, scale: 0.5, y: 50 }}
                 animate={isInView ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.5, y: 50 }}
                 transition={{ duration: 0.8, delay: 1.0, type: "spring", stiffness: 200 }}
-                whileHover={{ scale: 1.05 }}
               >
                 <motion.p
                   className="font-roboto-flex-custom text-hero leading-[1.1em] text-center text-blue-prime"
@@ -154,14 +211,14 @@ export default function HeroSection() {
                 >BAILEARN</motion.p>
               </motion.div>
               <motion.p 
-                className="font-roboto-flex-custom text-hero leading-[1.1em] text-center text-white-framer"
+                className="font-roboto-flex-custom text-hero leading-[0.95em] text-center text-white-framer -mt-2 md:-mt-2.5 lg:-mt-3"
                 style={{letterSpacing: '0.05em'}}
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.6, delay: 1.4 }}
               >LUYỆN THI</motion.p>
               <motion.p 
-                className="font-roboto-flex-custom text-hero leading-[1.1em] text-center text-white-framer"
+                className="font-roboto-flex-custom text-hero leading-[0.95em] text-center text-white-framer mt-0.5 md:mt-1.5 lg:mt-1"
                 style={{letterSpacing: '0.05em'}}
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}

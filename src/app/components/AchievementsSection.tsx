@@ -86,19 +86,24 @@ const StatItem = ({ stat, index, isInView }: { stat: typeof statsData[0], index:
 const ResponsiveCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [dragX, setDragX] = useState(0);
+  const [lastInteraction, setLastInteraction] = useState(Date.now());
+  const autoPlayDelay = 7000; // Increased from 5000ms to 7000ms
 
+  // Autoplay with reset on user interaction
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
-    }, 5000);
+    }, autoPlayDelay);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [lastInteraction]); // Reset timer when user interacts
 
   const goToPrevious = () => {
     if (!isTransitioning) {
       setIsTransitioning(true);
       setCurrentSlide((prev) => (prev - 1 + carouselImages.length) % carouselImages.length);
+      setLastInteraction(Date.now()); // Reset autoplay timer
       setTimeout(() => setIsTransitioning(false), 800);
     }
   };
@@ -107,7 +112,30 @@ const ResponsiveCarousel = () => {
     if (!isTransitioning) {
       setIsTransitioning(true);
       setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
+      setLastInteraction(Date.now()); // Reset autoplay timer
       setTimeout(() => setIsTransitioning(false), 800);
+    }
+  };
+
+  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: { offset: { x: number }; velocity: { x: number } }) => {
+    const swipeThreshold = 50; // Minimum distance to trigger swipe
+    const swipeVelocity = 500; // Minimum velocity to trigger swipe
+    
+    // Reset drag position
+    setDragX(0);
+    
+    // Check if swipe is strong enough
+    if (Math.abs(info.offset.x) > swipeThreshold || Math.abs(info.velocity.x) > swipeVelocity) {
+      if (info.offset.x > 0) {
+        // Swiped right - go to previous
+        goToPrevious();
+      } else {
+        // Swiped left - go to next
+        goToNext();
+      }
+    } else {
+      // Even if swipe wasn't strong enough, reset timer on any drag attempt
+      setLastInteraction(Date.now());
     }
   };
 
@@ -115,14 +143,24 @@ const ResponsiveCarousel = () => {
     <div className="relative w-full max-w-[750px] h-[200px] sm:h-[240px] lg:h-[280px] px-4 sm:px-0">
       <div className="flex overflow-hidden w-full h-full relative rounded-xl">
         <motion.div 
-          className="flex w-full h-full"
-          animate={{ x: `-${currentSlide * 100}%` }}
+          className="flex w-full h-full cursor-grab active:cursor-grabbing"
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={0.2}
+          onDragEnd={handleDragEnd}
+          onDrag={(event, info) => setDragX(info.offset.x)}
+          animate={{ 
+            x: `calc(-${currentSlide * 100}% + ${dragX}px)`
+          }}
           transition={{ 
             type: "spring",
             stiffness: 200,
             damping: 25,
             mass: 1,
             velocity: isTransitioning ? 2 : 0
+          }}
+          style={{
+            touchAction: 'pan-y' // Allow vertical scroll while dragging horizontally
           }}
         >
           {carouselImages.map((image, index) => (

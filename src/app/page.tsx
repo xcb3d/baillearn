@@ -6,12 +6,14 @@ import GlowUpSection from './components/GlowUpSection';
 import TeachingStaffSection from './components/TeachingStaffSection';
 import AchievementsGallerySection from './components/AchievementsGallerySection';
 import Footer from './components/Footer';
+import FreeCourseSection from './components/FreeCourseSection';
 
 export default function Home() {
   return (
-    <div id="main" className="min-h-screen w-auto">
+    <div id="main" className="min-h-screen w-full overflow-x-hidden">
       <Header />
       <HeroSection />
+      <FreeCourseSection />
       <AchievementsSection />
       <BentoSection />
       <TeachingStaffSection />

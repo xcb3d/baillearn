@@ -314,12 +314,17 @@ export default function TeachingStaffSection() {
         // Dynamic calculation based on actual DOM measurements
         const getScrollAmount = () => {
           const firstCard = scrollRef.current?.querySelector('li');
-          if (!firstCard) return 660; // fallback
+          if (!firstCard) return 330; // fallback
           
           const cardRect = firstCard.getBoundingClientRect();
           const cardWidth = cardRect.width;
           const gap = 10; // gap-2.5 = 10px
-          return 2 * (cardWidth + gap); // 2 cards + gaps
+          
+          // Check screen width to determine number of cards to scroll
+          const screenWidth = window.innerWidth;
+          const cardsToScroll = screenWidth >= 1024 ? 2 : 1; // lg breakpoint = 1024px
+          
+          return cardsToScroll * (cardWidth + gap); // cards + gaps
         };
         
         // Temporarily disable snap for smoother scrolling
@@ -355,10 +360,10 @@ export default function TeachingStaffSection() {
 
 
       {/* Title Section */}
-      <div className={`bg-primary flex flex-row justify-center items-center gap-2.5 w-full max-w-[90vw] sm:w-auto h-min px-4 py-6 relative overflow-hidden ${isVisible ? 'animate-title-dramatic-in' : 'opacity-0'}`}>
+      <div className={`bg-primary flex flex-row justify-center items-center gap-2.5 w-auto h-min px-4 py-2 md:px-6 md:py-2.5 lg:px-8 lg:py-3 relative overflow-hidden rounded-full z-10 ${isVisible ? 'animate-title-dramatic-in' : 'opacity-0'}`}>
         {/* Single Title for all devices */}
-        <div className="outline-none flex flex-col justify-start flex-shrink-0 max-w-full">
-          <p className="font-inter font-bold text-center text-blue-prime whitespace-normal break-all text-[30px] sm:text-[35px] md:text-[40px] lg:text-[50px] xl:text-[60px]">
+        <div className="outline-none flex flex-col justify-start flex-shrink-0 max-w-[90vw] sm:max-w-none">
+          <p className="font-inter font-bold text-center text-blue-prime break-words text-[24px] xs:text-[28px] sm:text-[32px] md:text-[40px] lg:text-[50px] xl:text-[60px] leading-tight">
             ĐỘI NGŨ GIẢNG DẠY - CHUYÊN MÔN
           </p>
         </div>
@@ -432,7 +437,7 @@ export default function TeachingStaffSection() {
       <motion.div
         className="aspect-square h-[80px] z-5 flex-none w-[80px] absolute top-[-20px] right-[-25px] overflow-visible rotate-[45deg]
                         sm:h-[180px] sm:w-[180px] sm:top-[-40px] sm:right-[-50px] sm:rotate-[45deg]
-                        md:h-[240px] md:w-[240px] md:top-[15px] md:right-[-60px] md:rotate-[40deg]
+                        md:h-[240px] md:w-[240px] md:top-[-5px] md:right-[-80px] md:rotate-[40deg]
                         lg:h-[300px] lg:w-[300px] lg:top-[20px] lg:right-[-80px] lg:rotate-[35deg]"
         initial={{ opacity: 0, x: 100, rotate: 0 }}
         animate={isVisible ? { opacity: 1, x: 0, rotate: 35 } : { opacity: 0, x: 100, rotate: 0 }}

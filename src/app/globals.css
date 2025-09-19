@@ -769,16 +769,16 @@ body {
 
 
 
-/* Enhanced Smooth Scrolling Styles */
+/* Standard Scrolling */
 html {
-  scroll-behavior: auto !important; /* Disable native smooth scroll to let Lenis handle */
+  scroll-behavior: auto;
 }
 
 body {
-  overscroll-behavior: none; /* Prevent bounce effect on iOS */
+  overscroll-behavior: auto;
 }
 
-/* Custom scrollbar with premium style */
+/* Custom scrollbar with premium style - Blue theme */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -789,14 +789,14 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #FFD700 0%, #2864D1 100%);
+  background: linear-gradient(180deg, #6B9EFF 0%, #4A80E8 100%);
   border-radius: 4px;
   transition: all 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #FFD700 0%, #1f52b8 100%);
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  background: linear-gradient(180deg, #85B3FF 0%, #6B9EFF 100%);
+  box-shadow: 0 0 10px rgba(107, 158, 255, 0.3);
 }
 
 /* Scroll indicator animation */
@@ -837,22 +837,6 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* Lenis smooth scrolling enhancements */
-html.lenis {
-  height: auto;
-}
-
-html.lenis, html.lenis body {
-  overflow: auto;
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
 
 /* Custom scroll progress indicator */
 .scroll-progress {
@@ -948,7 +932,3 @@ html.lenis, html.lenis body {
   z-index: 1;
 }
 
-/* Prevent Lenis smooth scroll on this section for touch devices */
-#thanhtich[data-lenis-prevent-touch] {
-  touch-action: none;
-}

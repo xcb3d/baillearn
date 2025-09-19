@@ -175,21 +175,21 @@ const AchievementImage = React.memo(({
   const maxDelay = 0.2;
   const actualDelay = Math.min(groupDelay, maxDelay);
   
-  // Animation range for this specific image
+  // Animation range for this specific image - Extended for smoother desktop experience
   const startPoint = actualDelay;
-  const endPoint = Math.min(actualDelay + 0.4, 1);
+  const endPoint = Math.min(actualDelay + 0.65, 1);
   
-  // Transform values with optimized calculations
+  // Transform values with smoother, more gradual calculations
   const x = useTransform(
     scrollYProgress,
-    [startPoint, startPoint + 0.1, startPoint + 0.2, endPoint],
-    [image.initialTransform.x, image.initialTransform.x * 0.6, image.initialTransform.x * 0.2, 0]
+    [startPoint, startPoint + 0.15, startPoint + 0.35, startPoint + 0.5, endPoint],
+    [image.initialTransform.x, image.initialTransform.x * 0.7, image.initialTransform.x * 0.4, image.initialTransform.x * 0.15, 0]
   );
   
   const y = useTransform(
     scrollYProgress,
-    [startPoint, startPoint + 0.1, startPoint + 0.2, endPoint],
-    [image.initialTransform.y, image.initialTransform.y * 0.6, image.initialTransform.y * 0.2, 0]
+    [startPoint, startPoint + 0.15, startPoint + 0.35, startPoint + 0.5, endPoint],
+    [image.initialTransform.y, image.initialTransform.y * 0.7, image.initialTransform.y * 0.4, image.initialTransform.y * 0.15, 0]
   );
   
   const scale = useTransform(
@@ -200,8 +200,8 @@ const AchievementImage = React.memo(({
   
   const opacity = useTransform(
     scrollYProgress,
-    [startPoint, startPoint + 0.05, startPoint + 0.1],
-    [0, 0.5, 1]
+    [startPoint, startPoint + 0.05, endPoint],
+    [0, 1, 1]
   );
 
   return (
@@ -335,6 +335,11 @@ export default function AchievementsGallerySection() {
   const [isMobile, setIsMobile] = useState(false);
   const [imagesPerRow, setImagesPerRow] = useState(2);
   
+  // Dampening for smooth scroll
+  const targetProgress = useRef(0);
+  const currentProgress = useRef(0);
+  const rafId = useRef<number | null>(null);
+  
   // Preload images on mount
   useEffect(() => {
     preloadImages();
@@ -384,7 +389,7 @@ export default function AchievementsGallerySection() {
     const isScrollingUp = currentScrollTop < lastScrollTop.current;
     
     // Animation trigger points - mobile xuất hiện sớm hơn
-    const animationTriggerPoint = isMobile ? windowHeight * 0.8 : windowHeight * 0.5;
+    const animationTriggerPoint = isMobile ? windowHeight * 0.8 : windowHeight * 0.25;
     const fixedTriggerPoint = 0;
     
     // Unfreeze animation when scrolling up (desktop only)
@@ -438,27 +443,57 @@ export default function AchievementsGallerySection() {
           const scrolled = Math.abs(sectionTop - animationTriggerPoint);
           const scrollableDistance = sectionHeight - windowHeight + animationTriggerPoint;
           const rawProgress = scrolled / scrollableDistance;
-          const easedProgress = Math.min(1, Math.max(0,
-            rawProgress < 0.5
-              ? 2 * rawProgress * rawProgress
-              : 1 - Math.pow(-2 * rawProgress + 2, 2) / 2
-          ));
-          scrollYProgress.set(easedProgress);
+          
+          // Enhanced easing with smoothstep
+          const smoothstep = (x: number) => {
+            x = Math.max(0, Math.min(1, x));
+            return x * x * x * (x * (x * 6 - 15) + 10);
+          };
+          
+          const easedProgress = smoothstep(rawProgress);
+          targetProgress.current = easedProgress;
+          
         } else if (sectionTop > animationTriggerPoint) {
-          scrollYProgress.set(0);
+          targetProgress.current = 0;
         } else {
-          scrollYProgress.set(1);
+          targetProgress.current = 1;
         }
       } else {
-        scrollYProgress.set(frozenProgress.current);
+        targetProgress.current = frozenProgress.current;
       }
     }
     
     lastScrollTop.current = currentScrollTop;
   }, [scrollYProgress, animationFrozen, isMobile]);
   
+  // Smooth animation loop with dampening
   useEffect(() => {
-    let rafId: number | null = null;
+    if (isMobile) return; // Skip dampening on mobile
+    
+    const animateProgress = () => {
+      // Lerp (linear interpolation) for smooth transition
+      const dampeningFactor = 0.12; // Lower = smoother/slower
+      currentProgress.current += (targetProgress.current - currentProgress.current) * dampeningFactor;
+      
+      // Only update if there's significant change
+      if (Math.abs(targetProgress.current - currentProgress.current) > 0.001) {
+        scrollYProgress.set(currentProgress.current);
+      }
+      
+      rafId.current = requestAnimationFrame(animateProgress);
+    };
+    
+    rafId.current = requestAnimationFrame(animateProgress);
+    
+    return () => {
+      if (rafId.current) {
+        cancelAnimationFrame(rafId.current);
+      }
+    };
+  }, [scrollYProgress, isMobile]);
+  
+  useEffect(() => {
+    let scrollRafId: number | null = null;
     
     // Check mobile and calculate images per row
     const checkResponsive = () => {
@@ -489,11 +524,11 @@ export default function AchievementsGallerySection() {
     
     // Optimized scroll event with RAF throttling
     const handleScrollEvent = () => {
-      if (rafId) return;
+      if (scrollRafId) return;
       
-      rafId = requestAnimationFrame(() => {
+      scrollRafId = requestAnimationFrame(() => {
         handleScrollOptimized();
-        rafId = null;
+        scrollRafId = null;
       });
     };
     
@@ -512,13 +547,13 @@ export default function AchievementsGallerySection() {
       if (lenis) {
         lenis.off('scroll', handleScrollEvent);
       }
-      if (rafId) {
-        cancelAnimationFrame(rafId);
+      if (scrollRafId) {
+        cancelAnimationFrame(scrollRafId);
       }
     };
   }, [handleScrollOptimized, isMobile]);
 
-  const sectionHeight = isMobile ? '2200px' : '1790px';
+  const sectionHeight = isMobile ? '2200px' : '1500px';
 
   return (
     <section
