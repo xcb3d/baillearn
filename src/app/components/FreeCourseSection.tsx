@@ -220,8 +220,8 @@ export default function FreeCourseSection() {
       ref={sectionRef}
       className="
         flex flex-col lg:flex-row justify-start items-start 
-        w-full min-h-min py-12 px-4 md:px-8 lg:px-12
-        relative bg-cover bg-center rounded-3xl overflow-hidden
+        w-full min-h-min py-16 px-6 md:py-20 md:px-10 lg:py-24 lg:px-16
+        relative bg-cover bg-center rounded-3xl overflow-visible
       "
       style={{
         backgroundImage: "url('https://framerusercontent.com/images/RkybyQc7REVuHhtMWjuHcc886PI.png?width=1200&height=1519')"
@@ -232,7 +232,7 @@ export default function FreeCourseSection() {
     >
       {/* Carousel indicators - only show if multiple courses */}
       {freeCourses.length > 1 && (
-        <div className="flex justify-center items-center gap-2 mb-6">
+        <div className="flex justify-center items-center gap-2 mb-8">
           {freeCourses.map((_, index) => (
             <button
               key={index}
@@ -264,7 +264,7 @@ export default function FreeCourseSection() {
         <div className="
           flex flex-col justify-start items-start lg:items-start 
           gap-8 lg:gap-12 w-full lg:w-[680px] h-min 
-          py-0 pl-0 lg:pl-2.5 relative overflow-hidden
+          py-0 pl-0 lg:pl-2.5 relative overflow-visible
           text-left lg:text-left order-first lg:order-first
           opacity-0 translate-y-10 transition-all duration-700 ease-out
         " data-animate>
@@ -331,7 +331,7 @@ export default function FreeCourseSection() {
           {/* Call to Action Buttons */}
           <div className="
             flex flex-col justify-center lg:justify-start items-center 
-            gap-4 w-full h-min relative overflow-hidden
+            gap-4 w-full h-min relative overflow-visible
             opacity-0 translate-y-10 transition-all duration-700 ease-out delay-300
           " data-animate>
             
@@ -560,10 +560,10 @@ export default function FreeCourseSection() {
 
           {/* Decorative Asset 1 - Only visible on desktop */}
           <div className="
-            hidden lg:block absolute top-[11px] right-4 
-            w-[65px] h-[110px] overflow-visible 
+            hidden lg:block absolute top-[0px] right-2 
+            w-[50px] h-[85px] overflow-visible 
             transform rotate-[16deg] z-10
-          " 
+          "
                data-framer-name="Asset 1@3x">
             <div className="absolute rounded-inherit inset-0">
               <Image 
@@ -581,7 +581,7 @@ export default function FreeCourseSection() {
         <div className="
           flex-1 flex flex-col justify-center items-center gap-5 
           w-full h-full min-h-[400px] lg:min-h-[600px]
-          p-0 relative overflow-hidden order-last lg:order-last
+          p-0 relative overflow-visible order-last lg:order-last
           opacity-0 translate-y-10 transition-all duration-700 ease-out delay-100
         " data-animate
              data-framer-name="Image">
