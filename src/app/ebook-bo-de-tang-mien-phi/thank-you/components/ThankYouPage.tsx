@@ -73,7 +73,7 @@ export default function ThankYouPage() {
                   Quan trọng: Kiểm tra email của bạn!
                 </h3>
                 <p className="text-white/80 font-inter">
-                  Chúng tôi vừa gửi <strong>"Bộ Đề Thực Chiến ĐGNL HCM 2026"</strong> tới email của bạn. 
+                  Chúng tôi vừa gửi <strong>&ldquo;Bộ Đề Thực Chiến ĐGNL HCM 2026&rdquo;</strong> tới email của bạn.
                   Nếu không thấy trong hộp thư chính, hãy kiểm tra thư mục <strong>Spam/Promotional</strong>.
                 </p>
               </div>
@@ -181,7 +181,7 @@ export default function ThankYouPage() {
               <span className="text-baillearn-yellow">Bai</span>Learn
             </div>
             <p className="text-white/60 text-sm font-inter">
-              © 2025 BaiLearn. All rights reserved. | "Học để hiểu - Hiểu để sáng tạo"
+              © 2025 BaiLearn. All rights reserved. | &ldquo;Học để hiểu - Hiểu để sáng tạo&rdquo;
             </p>
           </footer>
         </div>
