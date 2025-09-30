@@ -11,6 +11,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "BaiLearn - Luyện thi ĐGNL HCM",
   description: "Luyện thi Đánh giá năng lực ĐH Quốc gia TP.HCM - BaiLearn | \"Học để hiểu - Hiểu để sáng tạo\"",
+  icons: {
+    icon: '/site-logo.png',
+    shortcut: '/site-logo.png',
+    apple: '/site-logo.png',
+  },
 };
 
 export default function RootLayout({
@@ -21,6 +26,11 @@ export default function RootLayout({
   return (
     <html lang="vi">
       <head>
+        {/* Favicon */}
+        <link rel="icon" href="/site-logo.png" type="image/png" />
+        <link rel="shortcut icon" href="/site-logo.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/site-logo.png" />
+        
         {/* Google Fonts preconnect */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
