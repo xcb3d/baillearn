@@ -494,27 +494,6 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Copyright Section */}
-        <motion.div 
-          className="w-full mt-12 py-6 border-t border-[#FFD700]/20 bg-gradient-to-b from-transparent to-[#FFF8DC]/50"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <div className="text-center">
-            <p className="text-sm md:text-base text-gray-600">
-              © 2024 BaiLearn. All rights reserved. Made with 
-              <motion.span 
-                className="inline-block mx-1 text-red-500"
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              >
-                ❤️
-              </motion.span>
-              for students
-            </p>
-          </div>
-        </motion.div>
       </motion.footer>
 
       {/* Back to Top Button */}

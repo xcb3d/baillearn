@@ -36,94 +36,30 @@ interface FreeCourse {
 // Sample free courses data
 const freeCourses: FreeCourse[] = [
   {
-    id: 'tuan-le-do',
-    title: 'Manifest ĐGNL HCM Tuần Lễ Đỏ (FREE)',
+    id: 'livestream-dgnl',
+    title: 'Chuỗi livestream miễn phí cùng BaiLearn - Nắm trọn "kiến thức nền tảng nhất" để chinh phục 900+ & 1000+ ĐGNL HCM trong năm 2026.',
     shortDescription: (
       <>
-        🎯 TUẦN LỄ ĐỎ ĐÓN QUỐC KHÁNH - Manifest Điểm Cao ĐGNL HCM<br />
-        🔥 Chuỗi livestream MIỄN PHÍ 1 tuần từ BaiLearn – xuất pháf, chuẩn bị kiến thức cho kỳ thi ĐGNL HCM 2026!<br />
-        👉 Dành cho 2k8 muốn khởi động sớm<br />
-        📌 Cơ hội vàng để học, luyện đề, và nhẫn bí kíp chiến thuật từ đội ngũ giáo viên chất lượng cao!
+        📌 Thời gian livestream: mỗi tối từ 21h30 đến 23h00<br />
+        📍 Nền tảng: Livestream trực tiếp trên kênh TikTok BaiLearn
       </>
     ),
     fullDescription: (
       <>
-        🎯 TUẦN LỄ ĐỎ ĐÓN QUỐC KHÁNH - Manifest Điểm Cao ĐGNL HCM<br />
-        🔥 Chuỗi livestream MIỄN PHÍ 1 tuần từ BaiLearn – xuất phát, chuẩn bị kiến thức cho kỳ thi ĐGNL HCM 2026 – do đội ngũ giáo viên chất lượng từ BaiLearn trực tiếp giảng dạy.<br />
-        📌 Thời gian livestream: từ 27/8 đến 2/9, mỗi tối từ 21h30 đến 23h00<br />
+        📌 Thời gian livestream: mỗi tối từ 21h30 đến 23h00<br />
         📍 Nền tảng: Livestream trực tiếp trên kênh TikTok BaiLearn<br />
-        👩‍🎓 Dành cho:<br />
-        2k8: Khởi động sớm – làm quen cấu trúc đề, cách học thông minh để bứt tốc từ bây giờ.<br />
         <br />
-        🎁 Bạn nhận được gì khi tham gia?<br />
-        Ôn tập sớm kiến thức trọng tâm – bám sát đề thi ĐGNL HCM<br />
-        Luyện đề trực tiếp cùng giáo viên – sửa chi tiết, chỉ cách phân tích và tránh bẫy<br />
-        Tặng kèm tài liệu ôn tập, định hướng chiến thuật.<br />
-        Cơ hội tương tác trực tiếp, hỏi - đáp ngay tại livestream
+        <span className="font-bold text-xl">🎁 Chỉ với một nút bấm duy nhất và đây là tất cả những gì 2k8 sẽ nhận được:</span><br />
+        <span className="text-base">✅ Làm chủ cấu trúc & dạng đề ĐGNL HCM - không còn mơ hồ, biết rõ đề thi hỏi gì và cách tiếp cận.<br />
+        ✅ &ldquo;Giải phẫu&rdquo; những câu hỏi bẫy thường gặp - tránh những pha mất điểm oan và tiếc nuối nhất trong đề thi ĐGNL<br />
+        ✅ Luyện đề trực tiếp cùng các thủ khoa - chỉ ngay lỗi sai và các &lsquo;bí kíp&rdquo; suy luận nhanh, không chỉ biết đáp án mà còn hiểu vì sao chọn đúng.<br />
+        ✅ Tiết lộ chiến lược ôn tập thông minh: phân bổ thời gian học, chọn trọng tâm, cách tận dụng 80/20 để bứt tốc.<br />
+        ✅ Được tặng bộ tài liệu chuyên sâu do chính các thủ khoa top đầu biên soạn - đã áp dụng thành công để đạt 900+ và 1000+.<br />
+        ✅ Tham gia group kín BaiLearn – nơi học sinh ĐGNL chia sẻ kinh nghiệm, trao đổi tài liệu và động viên nhau trong hành trình ôn thi</span>
       </>
     ),
-    imageUrl: 'https://framerusercontent.com/images/Awv7lLS5U3ZHJWvyiJbgvx1COEE.png?scale-down-to=1024',
+    imageUrl: '/free1.jpg',
     buttonText: 'Tham gia ngay'
-  },
-  {
-    id: 'bootcamp-dgnl',
-    title: 'Bootcamp ĐGNL HCM 2026 (FREE)',
-    shortDescription: (
-      <>
-        🚀 BOOTCAMP ĐGNL HCM 2026 - Chiến lược đạt điểm cao<br />
-        🎓 Khóa học miễn phí 3 ngày từ BaiLearn - Tập trung cao độ cho kỳ thi ĐGNL HCM!<br />
-        🔥 Dành cho học sinh 2k8 định hướng đại học<br />
-        ⚡ Cơ hội vàng để làm chủ kì thi và định hướng tương lai!
-      </>
-    ),
-    fullDescription: (
-      <>
-        🚀 BOOTCAMP ĐGNL HCM 2026 - Chiến lược đạt điểm cao<br />
-        🎓 Khóa học miễn phí 3 ngày từ BaiLearn - Tập trung cao độ với đội ngũ giáo viên kinh nghiệm.<br />
-        📌 Thời gian: Cuối tuần 21-22/9, toàn thời gian từ 8h-17h<br />
-        📍 Địa điểm: Online qua Zoom + Offline tại TP.HCM<br />
-        🎯 Khối lượng: 18 tiết học yếu cầu cao<br />
-        2k8: Bootcamp chuyên sâu - Làm chủ toàn bộ kiến thức cốt lõi.<br />
-        <br />
-        🎁 Nội dung Bootcamp:<br />
-        Phương pháp giải nhanh toàn - lý - hóa chuyên sâu<br />
-        Chiến thuật làm bài hiệu quả và quản lý thời gian<br />
-        Tài liệu độc quyền và bộ đề thử sức thực tế.<br />
-        Giải đáp thắc mắc 1-1 cùng giáo viên
-      </>
-    ),
-    imageUrl: 'https://framerusercontent.com/images/Awv7lLS5U3ZHJWvyiJbgvx1COEE.png?scale-down-to=1024',
-    buttonText: 'Đăng ký ngay'
-  },
-  {
-    id: 'workshop-free',
-    title: 'Workshop ĐGNL - Miễn Phí (FREE)',
-    shortDescription: (
-      <>
-        🎨 WORKSHOP ĐGNL SPECIAL - Khám phá bí mật điểm cao<br />
-        🎆 Sự kiện đặc biệt miễn phí 1 ngày từ BaiLearn - Trải nghiệm thực tế!<br />
-        🏆 Dành cho mọi học sinh quan tâm đến ĐGNL<br />
-        🔍 Khám phá cách học hiệu quả và chiến lược thi thâng!
-      </>
-    ),
-    fullDescription: (
-      <>
-        🎨 WORKSHOP ĐGNL SPECIAL - Khám phá bí mật điểm cao<br />
-        🎆 Sự kiện đặc biệt miễn phí 1 ngày từ BaiLearn - Trải nghiệm học tập thực tế với giáo viên.<br />
-        📌 Thời gian: Chủ nhật 15/10, từ 14h-18h chiều<br />
-        📍 Hình thức: Interactive Workshop - Tương tác trực tiếp<br />
-        🎯 Đối tượng: Tất cả học sinh muốn tìm hiểu ĐGNL<br />
-        Trải nghiệm: Workshop thực hành - Làm đề, thảo luận nhóm.<br />
-        <br />
-        🎁 Bạn sẽ trải nghiệm:<br />
-        Phân tích cấu trúc đề thi ĐGNL chi tiết<br />
-        Làm thử đề mẫu và nhận đánh giá trực tiếp<br />
-        Tài liệu hướng dẫn chi tiết và lộ trình ôn thi.<br />
-        Kết nối với cộng đồng học tập tại BaiLearn
-      </>
-    ),
-    imageUrl: 'https://framerusercontent.com/images/Awv7lLS5U3ZHJWvyiJbgvx1COEE.png?scale-down-to=1024',
-    buttonText: 'Tham gia Workshop'
   }
 ];
 
@@ -215,6 +151,13 @@ export default function FreeCourseSection() {
     setLastInteraction(Date.now());
   };
 
+  // Guard clause - return early if no valid course
+  if (!freeCourses[currentCourse]) {
+    return null;
+  }
+
+  const course = freeCourses[currentCourse];
+
   return (
     <section 
       ref={sectionRef}
@@ -276,7 +219,7 @@ export default function FreeCourseSection() {
               text-gray-800 leading-tight lg:leading-none
               tracking-tight lg:tracking-[-2px]
             " style={{ fontSize: '50px' }}>
-              {freeCourses[currentCourse].title}
+              {course.title}
             </h1>
           </div>
 
@@ -305,7 +248,7 @@ export default function FreeCourseSection() {
                       }}
                       className="overflow-hidden"
                     >
-                      {freeCourses[currentCourse].shortDescription}
+                      {course.shortDescription}
                     </motion.div>
                   ) : (
                     <motion.div
@@ -320,7 +263,7 @@ export default function FreeCourseSection() {
                       }}
                       className="overflow-hidden"
                     >
-                      {freeCourses[currentCourse].fullDescription}
+                      {course.fullDescription}
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -410,7 +353,7 @@ export default function FreeCourseSection() {
                   {/* Button Text */}
                   <div className="outline-none flex flex-col justify-center flex-shrink-0
                                  text-blue-prime font-inter font-semibold text-2xl leading-[1.4] z-20">
-                    {hasJoined ? 'Thu gọn' : freeCourses[currentCourse].buttonText}
+                    {hasJoined ? 'Thu gọn' : course.buttonText}
                   </div>
                   
                   {/* Decorative Image 1 - Top Right */}
@@ -587,8 +530,8 @@ export default function FreeCourseSection() {
              data-framer-name="Image">
           <div className="absolute inset-0" style={{ borderRadius: '20px' }}>
             <Image 
-              src={freeCourses[currentCourse].imageUrl} 
-              alt={`${freeCourses[currentCourse].title} illustration`} 
+              src={course.imageUrl} 
+              alt={`${course.title} illustration`} 
               width={2000} 
               height={2000}
               className="block w-full h-full object-cover object-center"
