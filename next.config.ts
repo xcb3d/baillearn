@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
         pathname: '/images/**',
       },
     ],
-    qualities: [95, 100],
+    qualities: [85, 95, 100],
   },
   async redirects() {
     return [
