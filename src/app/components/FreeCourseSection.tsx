@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 // SVG Components for decorative assets
 const Frame341SVG = () => (
@@ -64,6 +65,7 @@ const freeCourses: FreeCourse[] = [
 ];
 
 export default function FreeCourseSection() {
+  const router = useRouter();
   const sectionRef = useRef<HTMLElement>(null);
   const [currentCourse, setCurrentCourse] = useState(0);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -218,7 +220,7 @@ export default function FreeCourseSection() {
               font-inter font-bold 
               text-gray-800 leading-tight lg:leading-none
               tracking-tight lg:tracking-[-2px]
-            " style={{ fontSize: '50px' }}>
+            " style={{ fontSize: 'clamp(24px, 5vw, 50px)' }}>
               {course.title}
             </h1>
           </div>
@@ -312,13 +314,7 @@ export default function FreeCourseSection() {
               <motion.button
                 className="relative w-full"
                 onClick={() => {
-                  if (hasJoined) {
-                    setIsExpanded(false);
-                    setHasJoined(false);
-                  } else {
-                    setHasJoined(true);
-                    setIsExpanded(true);
-                  }
+                  router.push('/group-vact-2026');
                 }}
                 type="button"
                 variants={{
@@ -353,7 +349,7 @@ export default function FreeCourseSection() {
                   {/* Button Text */}
                   <div className="outline-none flex flex-col justify-center flex-shrink-0
                                  text-blue-prime font-inter font-semibold text-2xl leading-[1.4] z-20">
-                    {hasJoined ? 'Thu gọn' : course.buttonText}
+                    {course.buttonText}
                   </div>
                   
                   {/* Decorative Image 1 - Top Right */}

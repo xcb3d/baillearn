@@ -8,68 +8,12 @@ const Footer: React.FC = () => {
   const footerRef = useRef<HTMLDivElement>(null);
   const [animatedElements, setAnimatedElements] = useState<Set<string>>(new Set());
   const [showBackToTop, setShowBackToTop] = useState(false);
-  const [isOnLightBg, setIsOnLightBg] = useState(false);
 
-  // Handle scroll for back to top button and detect background color
+  // Handle scroll for back to top button
   useEffect(() => {
-    const checkBackgroundColor = () => {
-      // Get element at button position
-      const buttonRight = window.innerWidth - 50; // Button is 8rem (32px) from right
-      const buttonBottom = window.innerHeight - 50; // Button is 8rem (32px) from bottom
-      
-      // Get multiple points around button area to check
-      const points = [
-        { x: buttonRight, y: buttonBottom },
-        { x: buttonRight - 40, y: buttonBottom },
-        { x: buttonRight, y: buttonBottom - 40 },
-        { x: buttonRight - 40, y: buttonBottom - 40 }
-      ];
-      
-      let hasLightBackground = false;
-      
-      for (const point of points) {
-        const element = document.elementFromPoint(point.x, point.y);
-        if (element) {
-          const computedStyle = window.getComputedStyle(element);
-          const bgColor = computedStyle.backgroundColor;
-          const bgImage = computedStyle.backgroundImage;
-          
-          // Check if background is yellow/gold/light
-          if (bgColor.includes('rgb')) {
-            const matches = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
-            if (matches) {
-              const [, r, g, b] = matches.map(Number);
-              // Check for yellow/gold tones (high red+green, lower blue)
-              // or very light colors (high brightness)
-              const isYellowish = r > 200 && g > 180 && b < 150;
-              const isBright = (r + g + b) / 3 > 230;
-              if (isYellowish || isBright) {
-                hasLightBackground = true;
-                break;
-              }
-            }
-          }
-          
-          // Check for gold/yellow in gradients
-          if (bgImage.includes('gold') || bgImage.includes('#FFD700') || 
-              bgImage.includes('#FFF8DC') || bgImage.includes('rgb(255, 215, 0)')) {
-            hasLightBackground = true;
-            break;
-          }
-        }
-      }
-      
-      setIsOnLightBg(hasLightBackground);
-    };
-    
     const handleScroll = () => {
       const scrolled = window.scrollY;
       setShowBackToTop(scrolled > 50); // Chỉ cần scroll 50px là xuất hiện
-      
-      if (scrolled > 50) {
-        // Check background color when button is visible
-        requestAnimationFrame(checkBackgroundColor);
-      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -505,47 +449,28 @@ const Footer: React.FC = () => {
             exit={{ opacity: 0, scale: 0 }}
             transition={{ duration: 0.3 }}
             onClick={scrollToTop}
-            className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 group"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           >
-            <div className="relative">
-              {/* Dynamic outer ring based on background */}
-              <div className={`absolute -inset-1 rounded-full blur-sm transition-all duration-500 ${
-                isOnLightBg 
-                  ? 'bg-gradient-to-r from-purple-600 to-purple-800 opacity-50 group-hover:opacity-70' 
-                  : 'bg-gradient-to-r from-[#2864d1] to-[#1e4ba8] opacity-40 group-hover:opacity-60'
-              }`} />
-              
-              {/* Dynamic contrast layer */}
-              <div className={`absolute inset-0 rounded-full backdrop-blur-sm transition-all duration-500 ${
-                isOnLightBg ? 'bg-black/10' : 'bg-white/30'
-              }`} />
-              
-              {/* Main button with dynamic color */}
-              <div className={`relative rounded-full p-3 md:p-5 transition-all duration-300 group-hover:scale-110 ${
-                isOnLightBg ? 'glass-effect-purple' : 'glass-effect-dark'
-              }`}>
-                {/* Inner shine effect */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/10 via-transparent to-transparent" />
-                
-                {/* Larger, clearer icon */}
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="relative text-white z-10 drop-shadow-md md:w-7 md:h-7"
-                >
-                  <path
-                    d="M12 5L12 19M12 5L5 12M12 5L19 12"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
+            {/* Stacked images for icon effect */}
+            <div className="relative w-12 h-12 md:w-14 md:h-14">
+              {/* Bottom layer - shifted down */}
+              <Image
+                src="/bentocard-float1.png"
+                alt=""
+                width={64}
+                height={64}
+                className="absolute top-6 left-0 w-full h-full object-contain"
+              />
+              {/* Top layer */}
+              <Image
+                src="/bentocard-float1.png"
+                alt=""
+                width={64}
+                height={64}
+                className="relative w-full h-full object-contain"
+              />
             </div>
           </motion.button>
         )}
