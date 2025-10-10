@@ -68,7 +68,7 @@ export default function HeroSection({ onFormSuccess }: HeroSectionProps) {
           <div className="relative flex-shrink-0">
             <div className="relative w-[280px] lg:w-[320px]">
               <Image
-                src="/bia-sach-3.png"
+                src="/bia-sach-4.png"
                 alt="Bộ Đề Thực Chiến ĐGNL HCM 2026"
                 width={350}
                 height={466}

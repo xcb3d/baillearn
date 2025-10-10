@@ -7,9 +7,10 @@ export default function EbookFooter() {
         <div className="text-2xl font-bold text-white mb-4 font-roboto-flex">
           <span className="text-baillearn-yellow">Bai</span>Learn
         </div>
-        <p className="text-white/60 text-sm font-inter">
-          © 2025 BaiLearn. All rights reserved. | &ldquo;Học để hiểu - Hiểu để sáng tạo&rdquo;
-        </p>
+        <div className="flex flex-col items-center gap-2 text-white/60 text-sm font-inter">
+          <p>📞 0932 755 465 | ✉️ bailearn.edu@gmail.com</p>
+          <p>🏢 Phạm Hữu Lầu, xã Nhà Bè, TP HCM | 📄 MST: 8945840951-001</p>
+        </div>
       </div>
     </footer>
   );

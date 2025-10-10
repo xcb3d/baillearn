@@ -432,12 +432,30 @@ const Footer: React.FC = () => {
                     bailearn.edu@gmail.com
                   </span>
                 </motion.div>
+                <motion.div 
+                  className="flex items-center gap-3 text-gray-600 group"
+                  whileHover={{ x: 5 }}
+                >
+                  <span className="text-xl group-hover:scale-110 transition-transform">🏢</span>
+                  <span className="font-medium group-hover:text-[#2864d1] transition-colors">
+                    Phạm Hữu Lầu, xã Nhà Bè, TP HCM
+                  </span>
+                </motion.div>
+                <motion.div 
+                  className="flex items-center gap-3 text-gray-600 group"
+                  whileHover={{ x: 5 }}
+                >
+                  <span className="text-xl group-hover:scale-110 transition-transform">📄</span>
+                  <span className="font-medium group-hover:text-[#2864d1] transition-colors">
+                    MST: 8945840951-001
+                  </span>
+                </motion.div>
               </div>
             </motion.div>
           </div>
         </div>
 
-        {/* Copyright Section */}
+
       </motion.footer>
 
       {/* Back to Top Button */}
