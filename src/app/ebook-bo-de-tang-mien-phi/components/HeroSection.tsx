@@ -68,7 +68,7 @@ export default function HeroSection({ onFormSuccess }: HeroSectionProps) {
           <div className="relative flex-shrink-0">
             <div className="relative w-[280px] lg:w-[320px]">
               <Image
-                src="/bia-sach-4.png"
+                src="/bia-sach-555.png"
                 alt="Bộ Đề Thực Chiến ĐGNL HCM 2026"
                 width={350}
                 height={466}
@@ -76,7 +76,7 @@ export default function HeroSection({ onFormSuccess }: HeroSectionProps) {
                 priority
               />
               {/* Glow effect behind image */}
-              <div className="absolute inset-[-1rem] bg-[linear-gradient(to_right,rgb(var(--baillearn-yellow)/0.3),rgb(var(--baillearn-yellow)/0.2),rgb(var(--baillearn-blue)/0.3))] rounded-2xl blur-2xl opacity-75 animate-pulse z-[-1]"></div>
+              {/* <div className="absolute inset-[-1rem] bg-[linear-gradient(to_right,rgb(var(--baillearn-yellow)/0.3),rgb(var(--baillearn-yellow)/0.2),rgb(var(--baillearn-blue)/0.3))] rounded-2xl blur-2xl opacity-75 animate-pulse z-[-1]"></div> */}
             </div>
           </div>
         </div>
